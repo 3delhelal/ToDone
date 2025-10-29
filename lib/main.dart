@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todone/core/constants/app_constants.dart';
+import 'package:todone/core/extensions/context_extensions.dart';
 import 'package:todone/todone_app.dart';
 
 void main() {
@@ -13,9 +15,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("ToDone"),
+        title: Text(AppConstants.appName),
       ),
-      body: Center(child: Text("Hello, World!")),
+      body: Center(child: Text(context.localize.welcomeMessage)),
     );
   }
 }
