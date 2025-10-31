@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todone/core/constants/app_constants.dart';
-import 'package:todone/core/extensions/context_extensions.dart';
-import 'package:todone/todone_app.dart';
+import '/core/constants/app_constants.dart';
+import '/core/extensions/context_extensions.dart';
+import '/todone_app.dart';
 
 void main() {
   runApp(const ToDoneApp());
@@ -14,10 +14,17 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(AppConstants.appName),
+        title: Text(
+          AppConstants.appName,
+          style: context.theme.textTheme.titleMedium,
+        ),
       ),
-      body: Center(child: Text(context.localize.welcomeMessage)),
+      body: Center(
+        child: Text(
+          context.localize.welcomeMessage,
+          style: context.theme.textTheme.bodyMedium,
+        ),
+      ),
     );
   }
 }

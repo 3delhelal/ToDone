@@ -33,3 +33,8 @@ extension Navigation on BuildContext {
 extension Localization on BuildContext {
   AppLocalizations get localize => AppLocalizations.of(this);
 }
+
+// This extension is used to get the ThemeData from the Theme class.
+extension ThemeContext on BuildContext {
+  ThemeData get theme => Theme.of(this);
+}
