@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+import '/core/di.dart';
 import '/core/constants/app_constants.dart';
 import '/core/extensions/context_extensions.dart';
 import '/todone_app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final appDocDir = await getApplicationDocumentsDirectory();
+  Hive.init(appDocDir.path);
+  setupDI();
   runApp(const ToDoneApp());
 }
 
