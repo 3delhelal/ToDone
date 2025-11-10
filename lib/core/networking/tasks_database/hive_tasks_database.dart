@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 import 'base_tasks_db.dart';
 
 class HiveTasksDatabase implements BaseTasksDatabase {
-  final Box<Map<String, dynamic>> box;
+  final Box box;
   const HiveTasksDatabase(this.box);
   @override
   Future<void> addTask(Map<String, dynamic> task) async {
@@ -11,7 +11,7 @@ class HiveTasksDatabase implements BaseTasksDatabase {
 
   @override
   Future<List<Map<String, dynamic>>> getTasks() async {
-    return box.values.toList();
+    return box.values.map((map) => Map<String, dynamic>.from(map)).toList();
   }
 
   @override

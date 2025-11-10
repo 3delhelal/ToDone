@@ -8,6 +8,6 @@ final getIt = GetIt.instance;
 Future<void> setupDI() async {
   // Databases
   // - Hive Database
-  var box = await Hive.openBox<Map<String, dynamic>>('tasksBox');
+  var box = await Hive.openBox('tasksBox');
   getIt.registerLazySingleton<BaseTasksDatabase>(() => HiveTasksDatabase(box));
 }
