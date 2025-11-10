@@ -45,19 +45,19 @@ class TextStylesManager {
   static TextStyle captionLargeLight = TextStyle(
     fontSize: 16,
     fontWeight: FontWeightsManager.medium,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionMediumLight = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionSmallLight = TextStyle(
     fontSize: 12,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
   //        >>>DARK THEME<<<
   // Title
@@ -100,18 +100,18 @@ class TextStylesManager {
   static TextStyle captionLargeDark = TextStyle(
     fontSize: 16,
     fontWeight: FontWeightsManager.medium,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionMediumDark = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionSmallDark = TextStyle(
     fontSize: 12,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 }

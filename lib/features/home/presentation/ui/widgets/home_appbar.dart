@@ -9,12 +9,7 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-        context.localize.tasksList,
-        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-          color: context.theme.appBarTheme.foregroundColor,
-        ),
-      ),
+      title: Text(context.localize.tasksList),
       bottom: TabBar(
         labelStyle: Theme.of(context).textTheme.titleSmall,
         controller: tabController,
@@ -36,5 +31,5 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 48);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 30);
 }
