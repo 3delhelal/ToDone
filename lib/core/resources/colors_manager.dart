@@ -6,6 +6,9 @@ class ColorsManager {
   static const Color black = Color(0xFF000000); // Black
   static const Color gray = Color(0xFF757575); // Gray
   static const Color errorColor = Color(0xFFFF0000); // Red
+  static const Color blueAccent = Color(0xFF448AFF); // Blue accent
+  static const Color meduimGrey = Color(0xFFBDBDBD); // Medium Grey
+
   // Light Theme Colors
   static const Color lightThemeBackgroundColor = Color(0xFFFFFFFF); // White
   static const Color lightThemePrimaryColor = Color(

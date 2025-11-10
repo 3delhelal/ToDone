@@ -35,6 +35,13 @@ abstract class AppLocalizations {
   ];
 
   String get welcomeMessage;
+
+  // Home Screen
+  String get tasksList;
+
+  String get unDone;
+
+  String get done;
 }
 
 class _AppLocalizationsDelegate

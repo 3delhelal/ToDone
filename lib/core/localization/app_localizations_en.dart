@@ -6,6 +6,13 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([super.locale = AppConstants.englishLocaleCode]);
 
   @override
-  @override
   String get welcomeMessage => 'Hello World!';
+
+  // Tasks Screen
+  @override
+  String get tasksList => 'Tasks List';
+  @override
+  String get unDone => 'To-do';
+  @override
+  String get done => 'Done';
 }

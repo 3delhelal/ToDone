@@ -7,4 +7,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get welcomeMessage => 'مرحباً بالعالم!';
+
+  // Tasks Screen
+  @override
+  String get tasksList => 'قائمة المهام';
+  @override
+  String get unDone => 'غير مكتمل';
+  @override
+  String get done => 'مكتمل';
 }
