@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/core/extensions/context_extensions.dart';
+import '/features/home/presentation/ui/widgets/home_body.dart';
 import 'widgets/home_appbar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeAppbar(tabController: _tabController),
-      body: Center(child: Text(context.localize.welcomeMessage)),
+      body: HomeBody(tabController: _tabController),
     );
   }
 }
