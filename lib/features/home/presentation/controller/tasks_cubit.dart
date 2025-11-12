@@ -1,19 +1,26 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/features/home/presentation/controller/dummy_data.dart';
 import '/features/home/domain/repo/base_tasks_repo.dart';
-import '../../domain/entities/task.dart';
+import '/features/home/domain/entities/task.dart';
 part 'tasks_state.dart';
 
 class TasksCubit extends Cubit<TasksState> {
   BaseTaksRepository homeRepository;
   TasksCubit(this.homeRepository)
     : super(TasksState(status: TasksStateStatus.loading)) {
-    loadTasks();
+    loadDummy();
+    // loadTasks();
+  }
+  void loadDummy() async {
+    emit(TasksState(status: TasksStateStatus.loaded, tasks: enTasks));
   }
 
   void loadTasks() async {
     try {
       emit(TasksState(status: TasksStateStatus.loading));
-      final tasks = await homeRepository.getTasks();
+      var tasks = await homeRepository.getTasks();
+      tasks = tasks.reversed
+          .toList(); // Reverse the tasks ​​to become descending according to the addition.
       emit(TasksState(status: TasksStateStatus.loaded, tasks: tasks));
     } catch (e) {
       emit(
@@ -28,7 +35,7 @@ class TasksCubit extends Cubit<TasksState> {
     emit(
       TasksState(
         status: TasksStateStatus.loaded,
-        tasks: state.tasks..add(task),
+        tasks: state.tasks..insert(0, task),
       ),
     );
   }
