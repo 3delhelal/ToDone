@@ -26,8 +26,6 @@ dependencies:
   get_it: ^8.3.0
 # State Managment
   flutter_bloc: ^9.1.1
-# Responsive UI
-  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   flutter_test:
