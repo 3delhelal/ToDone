@@ -7,6 +7,7 @@ import '/core/routing/app_router.dart';
 import '/core/localization/app_localizations.dart';
 import '/core/theming/theme_manager.dart';
 import 'features/home/presentation/controller/tasks_cubit.dart';
+import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 
 class ToDoneApp extends StatelessWidget {
   const ToDoneApp({super.key});
@@ -14,7 +15,10 @@ class ToDoneApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider<TasksCubit>(create: (_) => getIt())],
+      providers: [
+        BlocProvider<TasksCubit>(create: (_) => getIt()),
+        BlocProvider<ManageTaskCubit>(create: (_) => getIt()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: AppConstants.appName,
