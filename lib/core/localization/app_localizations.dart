@@ -35,6 +35,26 @@ abstract class AppLocalizations {
   ];
 
   String get welcomeMessage;
+
+  // Home Feature
+  String get tasksList;
+
+  String get unDone;
+
+  String get done;
+
+  String get somethingWentWrong;
+
+  String get noTasksHere;
+
+  String get confirmMessage;
+
+  String get confirmDeleteCardMsg;
+
+  // Common Widgets
+  String get cancel;
+
+  String get confirm;
 }
 
 class _AppLocalizationsDelegate

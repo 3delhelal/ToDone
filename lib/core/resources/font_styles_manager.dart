@@ -6,58 +6,58 @@ class TextStylesManager {
   //            >>>LIGHT THEME<<<
   // Title
   static TextStyle titleLargeLight = TextStyle(
-    fontSize: 20,
+    fontSize: 17,
     fontWeight: FontWeightsManager.bold,
     color: ColorsManager.black,
   );
 
   static TextStyle titleMediumLight = TextStyle(
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeightsManager.semiBold,
     color: ColorsManager.black,
   );
 
   static TextStyle titleSmallLight = TextStyle(
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeightsManager.medium,
     color: ColorsManager.black,
   );
   // Body
   // Light Theme Body
   static TextStyle bodyLargeLight = TextStyle(
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeightsManager.medium,
     color: ColorsManager.black,
   );
 
   static TextStyle bodyMediumLight = TextStyle(
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.black,
   );
 
   static TextStyle bodySmallLight = TextStyle(
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.black,
   );
   // Caption
   static TextStyle captionLargeLight = TextStyle(
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeightsManager.medium,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionMediumLight = TextStyle(
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionSmallLight = TextStyle(
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
   //        >>>DARK THEME<<<
   // Title
@@ -100,18 +100,18 @@ class TextStylesManager {
   static TextStyle captionLargeDark = TextStyle(
     fontSize: 16,
     fontWeight: FontWeightsManager.medium,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionMediumDark = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 
   static TextStyle captionSmallDark = TextStyle(
     fontSize: 12,
     fontWeight: FontWeightsManager.regular,
-    color: ColorsManager.gray,
+    color: ColorsManager.grey,
   );
 }

@@ -13,15 +13,9 @@ class ThemeManager {
       appBarTheme: AppBarTheme(
         backgroundColor: ColorsManager.lightThemePrimaryColor,
         foregroundColor: ColorsManager.white,
-        shape: BeveledRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
-          ),
-          side: BorderSide(color: Colors.black38),
-        ),
         toolbarHeight: 40,
       ),
+      cardTheme: CardThemeData(shadowColor: ColorsManager.grey.withAlpha(100)),
       textTheme: TextTheme(
         titleLarge: TextStylesManager.titleLargeLight,
         titleMedium: TextStylesManager.titleMediumLight,
@@ -43,6 +37,12 @@ class ThemeManager {
       scaffoldBackgroundColor: ColorsManager.darkThemeBackgroundColor,
       cardColor: ColorsManager.darkThemeCardColor,
       canvasColor: ColorsManager.darkThemeCanvasColor,
+      appBarTheme: AppBarTheme(
+        backgroundColor: ColorsManager.lightThemePrimaryColor,
+        foregroundColor: ColorsManager.white,
+        toolbarHeight: 40,
+      ),
+      cardTheme: CardThemeData(shadowColor: ColorsManager.black.withAlpha(100)),
       textTheme: TextTheme(
         titleLarge: TextStylesManager.titleLargeDark,
         titleMedium: TextStylesManager.titleMediumDark,

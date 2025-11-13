@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '/core/routing/routes.dart';
-import '../../main.dart';
+import '/features/home/presentation/ui/home_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -10,7 +10,7 @@ class AppRouter {
     switch (settings.name) {
       case RoutesManager.home:
         return MaterialPageRoute(
-          builder: (_) => MyHomePage(),
+          builder: (_) => HomeScreen(),
           settings: settings,
         );
 
