@@ -38,4 +38,7 @@ class ColorsManager {
   ); // Deep Midnight Teal
   static const Color darkThemeCanvasColor = Color(0xFF3F698C); // Muted Blue
   static const Color darkThemeCardColor = Color(0xFF242425); // Charcoal Gray
+
+  // Color Scheme
+  static const Color primaryScheme = Color(0xFF1B546E); // Light Deep Teal Blue
 }
