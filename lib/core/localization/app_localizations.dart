@@ -60,6 +60,14 @@ abstract class AppLocalizations {
   String get addTask;
 
   String get editTask;
+
+  String get title;
+
+  String get titleHint;
+
+  String get note;
+
+  String get noteHint;
 }
 
 class _AppLocalizationsDelegate

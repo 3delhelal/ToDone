@@ -35,4 +35,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get addTask => 'إضافة مهمة';
   @override
   String get editTask => 'تعديل مهمة';
+  @override
+  String get title => 'عنوان';
+  @override
+  String get titleHint => 'ادخل عنوان المهمة';
+  @override
+  String get note => 'ملحوظة';
+  @override
+  String get noteHint => 'اضف ملحوظة (اختياري)';
 }

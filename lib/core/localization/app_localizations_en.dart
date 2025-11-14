@@ -35,4 +35,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get addTask => 'Add task';
   @override
   String get editTask => 'Edit task';
+  @override
+  String get title => 'Title';
+  @override
+  String get titleHint => 'Entre a task\'s title';
+  @override
+  String get note => 'Note';
+  @override
+  String get noteHint => 'add a note (optional)';
 }
