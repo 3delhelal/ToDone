@@ -55,6 +55,11 @@ abstract class AppLocalizations {
   String get cancel;
 
   String get confirm;
+
+  // Manage Task
+  String get addTask;
+
+  String get editTask;
 }
 
 class _AppLocalizationsDelegate

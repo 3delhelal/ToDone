@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/core/routing/routes.dart';
 import '/features/home/presentation/ui/home_screen.dart';
+import '/features/manage_task/presentation/ui/manage_task_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -13,7 +14,11 @@ class AppRouter {
           builder: (_) => HomeScreen(),
           settings: settings,
         );
-
+      case RoutesManager.manageTask:
+        return MaterialPageRoute(
+          builder: (_) => ManageTaskScreen(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

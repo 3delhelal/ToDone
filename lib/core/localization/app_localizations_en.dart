@@ -29,4 +29,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
   @override
   String get confirm => 'Confirm';
+
+  // Manage Task
+  @override
+  String get addTask => 'Add task';
+  @override
+  String get editTask => 'Edit task';
 }

@@ -29,4 +29,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cancel => 'إلغاء';
   @override
   String get confirm => 'تأكيد';
+
+  // Manage Task
+  @override
+  String get addTask => 'إضافة مهمة';
+  @override
+  String get editTask => 'تعديل مهمة';
 }
