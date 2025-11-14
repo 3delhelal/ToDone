@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todone/core/constants/app_constants.dart';
 import '/core/resources/assets_manager.dart';
-import '/core/resources/colors_manager.dart';
 import '/core/widgets/svg_icon_button.dart';
 import '/core/extensions/context_extensions.dart';
 import '/core/extensions/generic_extensions.dart';
@@ -45,7 +44,7 @@ class TimeSelector extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
-            border: Border.all(color: ColorsManager.lightGrey),
+            border: Border.all(color: context.theme.colorScheme.outline),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Row(

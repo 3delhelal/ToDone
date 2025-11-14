@@ -16,7 +16,7 @@ class ManageTaskButtons extends StatelessWidget {
           child: ElevatedButton(
             style: ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(
-                Theme.of(context).colorScheme.primary,
+                context.theme.colorScheme.primary,
               ),
             ),
             onPressed: () {
@@ -36,7 +36,7 @@ class ManageTaskButtons extends StatelessWidget {
           child: OutlinedButton(
             style: OutlinedButton.styleFrom(
               side: BorderSide(
-                color: Theme.of(context).colorScheme.primary,
+                color: context.theme.colorScheme.primary,
                 width: 1.5,
               ),
             ),
@@ -46,7 +46,7 @@ class ManageTaskButtons extends StatelessWidget {
             child: Text(
               context.localize.cancel,
               style: context.theme.textTheme.bodyLarge!.copyWith(
-                color: Theme.of(context).colorScheme.primary,
+                color: context.theme.colorScheme.primary,
               ),
             ),
           ),

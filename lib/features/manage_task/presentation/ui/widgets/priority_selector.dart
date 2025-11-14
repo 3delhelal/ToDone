@@ -23,7 +23,10 @@ class PrioritySelector extends StatelessWidget {
           height: 48,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: ColorsManager.lightGrey, width: 1.2),
+            border: Border.all(
+              color: context.theme.colorScheme.outline,
+              width: 1.2,
+            ),
           ),
           child: BlocSelector<ManageTaskCubit, ManageTaskState, TaskPriority>(
             selector: (state) {

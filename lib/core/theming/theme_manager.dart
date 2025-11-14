@@ -6,7 +6,10 @@ class ThemeManager {
   static ThemeData get lightTheme {
     return ThemeData(
       primaryColor: ColorsManager.lightThemePrimaryColor,
-      colorScheme: ColorScheme.light(primary: ColorsManager.primaryScheme),
+      colorScheme: ColorScheme.light(
+        primary: ColorsManager.primaryScheme,
+        outline: ColorsManager.lightGrey,
+      ),
       scaffoldBackgroundColor: ColorsManager.lightThemeBackgroundColor,
       canvasColor: ColorsManager.lightThemeCanvasColor,
       cardColor: ColorsManager.lightThemeCardColor,
@@ -33,7 +36,10 @@ class ThemeManager {
   static ThemeData get darkTheme {
     return ThemeData(
       primaryColor: ColorsManager.darkThemePrimaryColor,
-      colorScheme: ColorScheme.dark(primary: ColorsManager.primaryScheme),
+      colorScheme: ColorScheme.dark(
+        primary: ColorsManager.primaryScheme,
+        outline: ColorsManager.lightGrey,
+      ),
       scaffoldBackgroundColor: ColorsManager.darkThemeBackgroundColor,
       cardColor: ColorsManager.darkThemeCardColor,
       canvasColor: ColorsManager.darkThemeCanvasColor,

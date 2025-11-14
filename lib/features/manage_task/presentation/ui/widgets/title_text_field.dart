@@ -25,7 +25,7 @@ class TitleTextField extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),
-          style: Theme.of(context).textTheme.bodySmall,
+          style: context.theme.textTheme.bodySmall,
           initialValue: initalValue,
           maxLines: null,
           onChanged: (value) {
