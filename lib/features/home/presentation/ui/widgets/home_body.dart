@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/features/manage_task/presentation/ui/manage_task_screen.dart';
 import '/features/home/presentation/ui/widgets/task_card/deleted_task_card.dart';
 import '/core/constants/app_constants.dart';
 import '/features/home/presentation/ui/widgets/task_card/task_card.dart';
@@ -110,7 +111,11 @@ Widget _buildTaskList(
         },
 
         onEdit: () {
-          //TODO: Navigate to Manage Product Screen.
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ManageTaskScreen(task: tasksList[index]),
+            ),
+          );
         },
       );
     },

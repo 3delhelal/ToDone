@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/features/home/presentation/ui/widgets/home_floating_button.dart';
 import '/features/home/presentation/ui/widgets/home_body.dart';
 import 'widgets/home_appbar.dart';
 
@@ -30,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: HomeAppbar(tabController: _tabController),
       body: HomeBody(tabController: _tabController),
+      floatingActionButton: HomeFloatingButton(),
     );
   }
 }

@@ -5,6 +5,7 @@ import '/core/networking/tasks_database/hive_tasks_database.dart';
 import '/features/home/data/repo/tasks_repo.dart';
 import '/features/home/domain/repo/base_tasks_repo.dart';
 import '/features/home/presentation/controller/tasks_cubit.dart';
+import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -20,4 +21,7 @@ Future<void> setupDI() async {
   );
   // Tasks Cubit
   getIt.registerLazySingleton<TasksCubit>(() => TasksCubit(getIt()));
+
+  // Manage Task Cubit
+  getIt.registerLazySingleton<ManageTaskCubit>(() => ManageTaskCubit(getIt()));
 }

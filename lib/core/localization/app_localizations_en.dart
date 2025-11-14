@@ -29,4 +29,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cancel => 'Cancel';
   @override
   String get confirm => 'Confirm';
+
+  // Manage Task
+  @override
+  String get addTask => 'Add task';
+  @override
+  String get editTask => 'Edit task';
+  @override
+  String get title => 'Title';
+  @override
+  String get titleHint => 'Entre a task\'s title';
+  @override
+  String get note => 'Note';
+  @override
+  String get noteHint => 'add a note (optional)';
+  @override
+  String get priority => 'Priority';
+  @override
+  String get lowPriority => 'Low';
+  @override
+  String get meduimPriority => 'Medium';
+  @override
+  String get highPriority => 'High';
+  @override
+  String get time => 'Time';
+  @override
+  String get save => 'Save';
 }

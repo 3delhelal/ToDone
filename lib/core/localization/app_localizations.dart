@@ -55,6 +55,31 @@ abstract class AppLocalizations {
   String get cancel;
 
   String get confirm;
+
+  // Manage Task
+  String get addTask;
+
+  String get editTask;
+
+  String get title;
+
+  String get titleHint;
+
+  String get note;
+
+  String get noteHint;
+
+  String get priority;
+
+  String get lowPriority;
+
+  String get meduimPriority;
+
+  String get highPriority;
+
+  String get time;
+
+  String get save;
 }
 
 class _AppLocalizationsDelegate

@@ -29,4 +29,30 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cancel => 'إلغاء';
   @override
   String get confirm => 'تأكيد';
+
+  // Manage Task
+  @override
+  String get addTask => 'إضافة مهمة';
+  @override
+  String get editTask => 'تعديل مهمة';
+  @override
+  String get title => 'عنوان';
+  @override
+  String get titleHint => 'ادخل عنوان المهمة';
+  @override
+  String get note => 'ملحوظة';
+  @override
+  String get noteHint => 'اضف ملحوظة (اختياري)';
+  @override
+  String get priority => 'الأولوية';
+  @override
+  String get lowPriority => 'منخفضة';
+  @override
+  String get meduimPriority => 'متوسطة';
+  @override
+  String get highPriority => 'مرتفعة';
+  @override
+  String get time => 'الوقت';
+  @override
+  String get save => 'حفظ';
 }
