@@ -6,6 +6,7 @@ import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 import '/features/home/domain/entities/task.dart';
 import 'widgets/note_text_field.dart';
 import 'widgets/title_text_field.dart';
+import 'widgets/priority_selector.dart';
 
 class ManageTaskScreen extends StatelessWidget {
   final Task? task;
@@ -29,6 +30,8 @@ class ManageTaskScreen extends StatelessWidget {
               TitleTextField(initalValue: task?.title),
               verticalSpace(25),
               NoteTextField(initalValue: task?.note),
+              verticalSpace(25),
+              PrioritySelector(),
             ],
           ),
         ),

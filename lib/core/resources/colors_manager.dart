@@ -21,7 +21,7 @@ class ColorsManager {
   static const Color softRed = Color(0xFFEF5350); // Soft red
   static const Color amberOrange = Color(0xFFFFA726); // Amber orange
   static const Color freshGreen = Color(0xFF66BB6A); // Fresh green
-
+  static const Color lightGrey = Color(0xFFE0E0E0); // Light Grey
   // Light Theme Colors
   static const Color lightThemeBackgroundColor = Color(0xFFFFFFFF); // White
   static const Color lightThemePrimaryColor = Color(

@@ -43,4 +43,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get note => 'ملحوظة';
   @override
   String get noteHint => 'اضف ملحوظة (اختياري)';
+  @override
+  String get priority => 'الأولوية';
+  @override
+  String get lowPriority => 'منخفضة';
+  @override
+  String get meduimPriority => 'متوسطة';
+  @override
+  String get highPriority => 'مرتفعة';
 }

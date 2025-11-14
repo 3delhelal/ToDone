@@ -68,6 +68,14 @@ abstract class AppLocalizations {
   String get note;
 
   String get noteHint;
+
+  String get priority;
+
+  String get lowPriority;
+
+  String get meduimPriority;
+
+  String get highPriority;
 }
 
 class _AppLocalizationsDelegate

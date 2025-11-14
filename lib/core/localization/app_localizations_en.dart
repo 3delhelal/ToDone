@@ -43,4 +43,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get note => 'Note';
   @override
   String get noteHint => 'add a note (optional)';
+  @override
+  String get priority => 'Priority';
+  @override
+  String get lowPriority => 'Low';
+  @override
+  String get meduimPriority => 'Medium';
+  @override
+  String get highPriority => 'High';
 }
