@@ -53,4 +53,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get highPriority => 'مرتفعة';
   @override
   String get time => 'الوقت';
+  @override
+  String get save => 'حفظ';
 }

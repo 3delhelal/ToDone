@@ -78,6 +78,8 @@ abstract class AppLocalizations {
   String get highPriority;
 
   String get time;
+
+  String get save;
 }
 
 class _AppLocalizationsDelegate

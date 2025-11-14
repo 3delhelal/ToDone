@@ -8,6 +8,7 @@ import 'widgets/note_text_field.dart';
 import 'widgets/title_text_field.dart';
 import 'widgets/priority_selector.dart';
 import 'widgets/time_picke_widget.dart';
+import 'widgets/manage_task_buttons.dart';
 
 class ManageTaskScreen extends StatelessWidget {
   final Task? task;
@@ -35,6 +36,8 @@ class ManageTaskScreen extends StatelessWidget {
               PrioritySelector(),
               verticalSpace(25),
               TimeSelector(),
+              verticalSpace(25),
+              ManageTaskButtons(),
             ],
           ),
         ),
