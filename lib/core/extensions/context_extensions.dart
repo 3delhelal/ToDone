@@ -38,3 +38,9 @@ extension Localization on BuildContext {
 extension ThemeContext on BuildContext {
   ThemeData get theme => Theme.of(this);
 }
+
+extension UnFocus on BuildContext {
+  void unfocus() {
+    FocusScope.of(this).unfocus();
+  }
+}
