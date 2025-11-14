@@ -51,4 +51,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get meduimPriority => 'Medium';
   @override
   String get highPriority => 'High';
+  @override
+  String get time => 'Time';
 }

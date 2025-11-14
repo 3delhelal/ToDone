@@ -76,6 +76,8 @@ abstract class AppLocalizations {
   String get meduimPriority;
 
   String get highPriority;
+
+  String get time;
 }
 
 class _AppLocalizationsDelegate

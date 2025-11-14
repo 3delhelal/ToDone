@@ -7,6 +7,7 @@ import '/features/home/domain/entities/task.dart';
 import 'widgets/note_text_field.dart';
 import 'widgets/title_text_field.dart';
 import 'widgets/priority_selector.dart';
+import 'widgets/time_picke_widget.dart';
 
 class ManageTaskScreen extends StatelessWidget {
   final Task? task;
@@ -32,6 +33,8 @@ class ManageTaskScreen extends StatelessWidget {
               NoteTextField(initalValue: task?.note),
               verticalSpace(25),
               PrioritySelector(),
+              verticalSpace(25),
+              TimeSelector(),
             ],
           ),
         ),
