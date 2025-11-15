@@ -13,9 +13,7 @@ import 'widgets/manage_task_buttons.dart';
 class ManageTaskScreen extends StatelessWidget {
   final Task? task;
   ManageTaskScreen({super.key, this.task}) {
-    if (task != null) {
-      getIt<ManageTaskCubit>().initScreen(task);
-    }
+    getIt<ManageTaskCubit>().initScreen(task);
   }
 
   @override
