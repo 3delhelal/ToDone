@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 
 class SVGIconButton extends StatelessWidget {
   final String svgPath;
@@ -21,7 +22,7 @@ class SVGIconButton extends StatelessWidget {
           svgPath,
 
           colorFilter: ColorFilter.mode(
-            Theme.of(context).colorScheme.primary,
+            context.theme.colorScheme.primary,
             BlendMode.srcIn,
           ),
         ),

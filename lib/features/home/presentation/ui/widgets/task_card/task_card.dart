@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import '/core/widgets/svg_icon_button.dart';
 import '/core/resources/assets_manager.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '/core/helpers/converters.dart';
 import '/core/widgets/confirm_dialog.dart';
 import '/core/widgets/spacing.dart';
 import '/features/home/domain/entities/task.dart';
 import 'widgets/task_date.dart';
-import 'widgets/task_button.dart';
 import 'widgets/task_priority_container.dart';
 import 'widgets/task_check_button.dart';
 import 'widgets/task_content.dart';
@@ -38,11 +38,11 @@ class TaskCard extends StatelessWidget {
                 padding: const EdgeInsetsDirectional.only(start: 5),
                 margin: const EdgeInsets.symmetric(vertical: 6),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).cardColor,
+                  color: context.theme.cardColor,
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
-                      color: Theme.of(context).cardTheme.shadowColor!,
+                      color: context.theme.cardTheme.shadowColor!,
                       spreadRadius: 1,
                       blurRadius: 2,
                       offset: const Offset(0, 2),
@@ -60,7 +60,7 @@ class TaskCard extends StatelessWidget {
                         task.priority,
                       ),
                     ),
-                    horizontalSpace(10),
+                    const HorizontalSpace(10),
                     TaskContent(
                       isDone: task.done,
                       title: task.title,
@@ -68,7 +68,7 @@ class TaskCard extends StatelessWidget {
                       width: constraints.maxWidth * 0.66,
                     ),
                     Spacer(),
-                    TaskButton(
+                    SVGIconButton(
                       svgPath: AssetsManager.deleteIcon,
                       callBack: () async {
                         var confrim = await confirmDialog(
@@ -81,8 +81,7 @@ class TaskCard extends StatelessWidget {
                         }
                       },
                     ),
-                    horizontalSpace(5),
-
+                    const HorizontalSpace(5),
                     TaskPriorityContainer(priority: task.priority),
                   ],
                 ),

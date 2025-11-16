@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '/core/extensions/context_extensions.dart';
-import '/core/extensions/generic_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
+import '/core/helpers/extensions/generic_extensions.dart';
 
 class TaskDateTime extends StatelessWidget {
   final DateTime dateTime;

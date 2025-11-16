@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todone/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 
 Future<bool> confirmDialog(
   BuildContext context, {
@@ -21,11 +21,11 @@ Future<bool> confirmDialog(
       actionsPadding: EdgeInsets.all(7),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context, false),
+          onPressed: () => context.pop(false),
           child: Text(context.localize.cancel),
         ),
         TextButton(
-          onPressed: () => Navigator.pop(context, true),
+          onPressed: () => context.pop(true),
           child: Text(context.localize.confirm),
         ),
       ],

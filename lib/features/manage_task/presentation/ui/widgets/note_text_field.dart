@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '/core/widgets/spacing.dart';
 
 class NoteTextField extends StatelessWidget {
@@ -20,7 +20,7 @@ class NoteTextField extends StatelessWidget {
             context.localize.note,
             style: context.theme.textTheme.titleSmall,
           ),
-          horizontalSpace(10),
+          const HorizontalSpace(10),
           Expanded(
             child: TextFormField(
               decoration: InputDecoration(

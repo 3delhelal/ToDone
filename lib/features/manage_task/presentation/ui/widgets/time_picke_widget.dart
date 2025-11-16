@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todone/core/constants/app_constants.dart';
 import '/core/resources/assets_manager.dart';
 import '/core/widgets/svg_icon_button.dart';
-import '/core/extensions/context_extensions.dart';
-import '/core/extensions/generic_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
+import '/core/helpers/extensions/generic_extensions.dart';
 import '/core/widgets/spacing.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 
@@ -40,7 +40,7 @@ class TimeSelector extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(context.localize.time, style: context.theme.textTheme.titleSmall),
-        verticalSpace(8),
+        const VerticalSpace(8),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(

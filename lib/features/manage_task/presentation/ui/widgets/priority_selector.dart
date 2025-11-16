@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '/core/resources/colors_manager.dart';
 import '/core/helpers/app_enums.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '/core/widgets/spacing.dart';
 
 class PrioritySelector extends StatelessWidget {
@@ -18,7 +18,7 @@ class PrioritySelector extends StatelessWidget {
           context.localize.priority,
           style: context.theme.textTheme.titleSmall,
         ),
-        verticalSpace(5),
+        const VerticalSpace(5),
         Container(
           height: 48,
           decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class PrioritySelector extends StatelessWidget {
                 color: color,
                 size: 20,
               ),
-              horizontalSpace(6),
+              const HorizontalSpace(6),
               Text(
                 label,
                 style: context.theme.textTheme.bodyMedium!.copyWith(

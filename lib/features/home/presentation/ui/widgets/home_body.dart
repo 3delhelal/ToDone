@@ -5,7 +5,7 @@ import '/features/home/presentation/ui/widgets/task_card/deleted_task_card.dart'
 import '/core/constants/app_constants.dart';
 import '/features/home/presentation/ui/widgets/task_card/task_card.dart';
 import '/core/resources/colors_manager.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '../../../domain/entities/task.dart';
 import '../../controller/tasks_cubit.dart';
 
@@ -51,7 +51,7 @@ Widget _buildTaskList(
     return Center(
       child: Text(
         context.localize.noTasksHere,
-        style: Theme.of(context).textTheme.bodyMedium,
+        style: context.theme.textTheme.bodyMedium,
       ),
     );
   }
@@ -111,7 +111,7 @@ Widget _buildTaskList(
         },
 
         onEdit: () {
-          Navigator.of(context).push(
+          context.push(
             MaterialPageRoute(
               builder: (context) => ManageTaskScreen(task: tasksList[index]),
             ),

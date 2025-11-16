@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '/core/resources/colors_manager.dart';
 
 class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -11,7 +11,7 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(context.localize.tasksList),
       bottom: TabBar(
-        labelStyle: Theme.of(context).textTheme.titleSmall,
+        labelStyle: context.theme.textTheme.titleSmall,
         controller: tabController,
         labelColor: ColorsManager.blueAccent,
         unselectedLabelColor: ColorsManager.meduimGrey,
