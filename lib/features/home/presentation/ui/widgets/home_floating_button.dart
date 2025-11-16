@@ -12,7 +12,7 @@ class HomeFloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       shape: CircleBorder(),
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: context.theme.colorScheme.primary,
       child: SvgPicture.asset(
         AssetsManager.addTaskIcon,
 

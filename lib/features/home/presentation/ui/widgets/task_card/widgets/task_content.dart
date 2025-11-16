@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 
 class TaskContent extends StatelessWidget {
   final String title;
@@ -23,7 +24,7 @@ class TaskContent extends StatelessWidget {
         children: [
           Text(
             title,
-            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+            style: context.theme.textTheme.titleSmall!.copyWith(
               decoration: isDone
                   ? TextDecoration.lineThrough
                   : TextDecoration.none,
@@ -33,7 +34,7 @@ class TaskContent extends StatelessWidget {
           if (note != null)
             Text(
               note!,
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(
+              style: context.theme.textTheme.labelMedium!.copyWith(
                 decoration: isDone
                     ? TextDecoration.lineThrough
                     : TextDecoration.none,

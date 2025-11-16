@@ -11,7 +11,7 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(context.localize.tasksList),
       bottom: TabBar(
-        labelStyle: Theme.of(context).textTheme.titleSmall,
+        labelStyle: context.theme.textTheme.titleSmall,
         controller: tabController,
         labelColor: ColorsManager.blueAccent,
         unselectedLabelColor: ColorsManager.meduimGrey,

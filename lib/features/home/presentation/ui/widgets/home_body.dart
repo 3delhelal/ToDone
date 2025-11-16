@@ -51,7 +51,7 @@ Widget _buildTaskList(
     return Center(
       child: Text(
         context.localize.noTasksHere,
-        style: Theme.of(context).textTheme.bodyMedium,
+        style: context.theme.textTheme.bodyMedium,
       ),
     );
   }
