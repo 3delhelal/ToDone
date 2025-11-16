@@ -111,7 +111,7 @@ Widget _buildTaskList(
         },
 
         onEdit: () {
-          Navigator.of(context).push(
+          context.push(
             MaterialPageRoute(
               builder: (context) => ManageTaskScreen(task: tasksList[index]),
             ),

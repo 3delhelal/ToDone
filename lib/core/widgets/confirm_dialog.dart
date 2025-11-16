@@ -21,11 +21,11 @@ Future<bool> confirmDialog(
       actionsPadding: EdgeInsets.all(7),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context, false),
+          onPressed: () => context.pop(false),
           child: Text(context.localize.cancel),
         ),
         TextButton(
-          onPressed: () => Navigator.pop(context, true),
+          onPressed: () => context.pop(true),
           child: Text(context.localize.confirm),
         ),
       ],

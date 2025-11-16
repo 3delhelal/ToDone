@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import '/core/localization/app_localizations.dart';
 
-extension Navigation on BuildContext {
+extension Navigation<T> on BuildContext {
+  Future<dynamic> push(Route route) async {
+    Navigator.of(this).push(route);
+  }
+
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) async {
     Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }
@@ -24,8 +28,8 @@ extension Navigation on BuildContext {
     );
   }
 
-  void pop() {
-    Navigator.of(this).pop();
+  void pop([T? result]) {
+    return Navigator.pop(this, result);
   }
 }
 
