@@ -18,7 +18,7 @@ class PrioritySelector extends StatelessWidget {
           context.localize.priority,
           style: context.theme.textTheme.titleSmall,
         ),
-        verticalSpace(5),
+        const VerticalSpace(5),
         Container(
           height: 48,
           decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class PrioritySelector extends StatelessWidget {
                 color: color,
                 size: 20,
               ),
-              horizontalSpace(6),
+              const HorizontalSpace(6),
               Text(
                 label,
                 style: context.theme.textTheme.bodyMedium!.copyWith(

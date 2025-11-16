@@ -60,7 +60,7 @@ class TaskCard extends StatelessWidget {
                         task.priority,
                       ),
                     ),
-                    horizontalSpace(10),
+                    const HorizontalSpace(10),
                     TaskContent(
                       isDone: task.done,
                       title: task.title,
@@ -81,7 +81,7 @@ class TaskCard extends StatelessWidget {
                         }
                       },
                     ),
-                    horizontalSpace(5),
+                    const HorizontalSpace(5),
                     TaskPriorityContainer(priority: task.priority),
                   ],
                 ),

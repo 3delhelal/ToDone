@@ -14,7 +14,7 @@ class TitleTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(context.localize.title, style: context.theme.textTheme.titleSmall),
-        verticalSpace(5),
+        const VerticalSpace(5),
         TextFormField(
           decoration: InputDecoration(
             hint: Text(

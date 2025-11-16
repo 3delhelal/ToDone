@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 
-SizedBox verticalSpace(double height) {
-  return SizedBox(height: height);
+class VerticalSpace extends StatelessWidget {
+  final double height;
+  const VerticalSpace(this.height, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(height: height);
+  }
 }
 
-SizedBox horizontalSpace(double width) {
-  return SizedBox(width: width);
+class HorizontalSpace extends StatelessWidget {
+  final double width;
+  const HorizontalSpace(this.width, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(width: width);
+  }
 }

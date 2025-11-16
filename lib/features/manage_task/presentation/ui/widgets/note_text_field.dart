@@ -20,7 +20,7 @@ class NoteTextField extends StatelessWidget {
             context.localize.note,
             style: context.theme.textTheme.titleSmall,
           ),
-          horizontalSpace(10),
+          const HorizontalSpace(10),
           Expanded(
             child: TextFormField(
               decoration: InputDecoration(

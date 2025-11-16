@@ -40,7 +40,7 @@ class TimeSelector extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(context.localize.time, style: context.theme.textTheme.titleSmall),
-        verticalSpace(8),
+        const VerticalSpace(8),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
