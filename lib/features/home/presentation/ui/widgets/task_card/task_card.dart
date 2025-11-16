@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '/core/widgets/svg_icon_button.dart';
 import '/core/resources/assets_manager.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '/core/helpers/converters.dart';
 import '/core/widgets/confirm_dialog.dart';
 import '/core/widgets/spacing.dart';

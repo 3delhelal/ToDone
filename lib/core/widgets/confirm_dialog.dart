@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todone/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 
 Future<bool> confirmDialog(
   BuildContext context, {

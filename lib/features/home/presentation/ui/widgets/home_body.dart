@@ -5,7 +5,7 @@ import '/features/home/presentation/ui/widgets/task_card/deleted_task_card.dart'
 import '/core/constants/app_constants.dart';
 import '/features/home/presentation/ui/widgets/task_card/task_card.dart';
 import '/core/resources/colors_manager.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '../../../domain/entities/task.dart';
 import '../../controller/tasks_cubit.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '/core/extensions/context_extensions.dart';
+import '/core/helpers/extensions/context_extensions.dart';
 import '/core/resources/assets_manager.dart';
 import '/core/resources/colors_manager.dart';
 import '/core/routing/routes.dart';
