@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/core/constants/random_generator.dart';
 import '/core/helpers/app_enums.dart';
 import '/features/home/presentation/controller/tasks_cubit.dart';
 import '/features/home/domain/entities/task.dart';
@@ -69,7 +70,7 @@ class ManageTaskCubit extends Cubit<ManageTaskState> {
     if (state.screenType == MangeTaskScreenType.add) {
       tasksCubit.addTask(
         Task(
-          id: state.pickedDateTime.toString(),
+          id: RandomGenerator.generateID(),
           title: taskTitle,
 
           time: state.pickedDateTime,

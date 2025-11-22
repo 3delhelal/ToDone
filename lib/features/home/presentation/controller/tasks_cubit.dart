@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/core/constants/app_constants.dart';
 import '/features/home/presentation/controller/dummy_data.dart';
 import '/features/home/domain/repo/base_tasks_repo.dart';
 import '/features/home/domain/entities/task.dart';
@@ -31,17 +32,16 @@ class TasksCubit extends Cubit<TasksState> {
   }
 
   void addTask(Task task) async {
-    await homeRepository.addTask(task);
     emit(
       TasksState(
         status: TasksStateStatus.loaded,
         tasks: state.tasks..insert(0, task),
       ),
     );
+    await homeRepository.addTask(task);
   }
 
   void editTask(Task newTask) async {
-    await homeRepository.editTask(newTask);
     final updatedTasks = state.tasks.map((task) {
       if (task.id == newTask.id) {
         return newTask;
@@ -49,11 +49,39 @@ class TasksCubit extends Cubit<TasksState> {
       return task;
     }).toList();
     emit(TasksState(status: TasksStateStatus.loaded, tasks: updatedTasks));
+    await homeRepository.editTask(newTask);
   }
 
-  void deleteTask(String id) async {
-    await homeRepository.deleteTask(id);
+  void toggleDone(Task newTask, {bool isLast = false}) async {
+    final updatedTasks = state.tasks.map((task) {
+      if (task.id == newTask.id) {
+        return newTask;
+      }
+      return task;
+    }).toList();
+    if (!isLast) {
+      // Check if the item is the last in the list.
+      emit(TasksState(status: TasksStateStatus.loaded, tasks: updatedTasks));
+    } else {
+      // To wait removing animation first before emit the new state.
+      Future.delayed(AppConstants.animationDuration, () {
+        emit(TasksState(status: TasksStateStatus.loaded, tasks: updatedTasks));
+      });
+    }
+    await homeRepository.editTask(newTask);
+  }
+
+  void deleteTask(String id, {bool isLast = false}) async {
     final updatedTasks = state.tasks.where((task) => task.id != id).toList();
-    emit(TasksState(status: TasksStateStatus.loaded, tasks: updatedTasks));
+    if (!isLast) {
+      // Check if the item is the last in the list.
+      emit(TasksState(status: TasksStateStatus.loaded, tasks: updatedTasks));
+    } else {
+      // To wait removing animation first before emit the new state.
+      Future.delayed(AppConstants.animationDuration, () {
+        emit(TasksState(status: TasksStateStatus.loaded, tasks: updatedTasks));
+      });
+    }
+    await homeRepository.deleteTask(id);
   }
 }
