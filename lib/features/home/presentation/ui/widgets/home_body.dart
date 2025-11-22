@@ -64,31 +64,24 @@ Widget _buildTaskList(
       return TaskCard(
         task: tasksList[index],
         onToggleDone: () {
+          var changedTask = tasksList[index].copyWith(
+            done: !tasksList[index].done,
+          );
           listkey.currentState!.removeItem(index, (context, animation) {
-            var copy = tasksList[index].copyWith(done: !tasksList[index].done);
             // To change the card background color, based on task state.
-            bool isDone = copy.done;
+            bool isDone = changedTask.done;
             return DeletableTaskCard(
-              task: copy,
+              task: changedTask,
               animation: animation,
               backgroundColor: isDone
                   ? ColorsManager.deletedCardBackDonegroundColor
                   : ColorsManager.deletedCardUnDoneBackgroundColor,
             );
           }, duration: AppConstants.animationDuration);
-          if (tasksList.length - 1 != index) {
-            // Check if the item is the last in the list.
-            tasksCubit.editTask(
-              tasksList[index].copyWith(done: !tasksList[index].done),
-            );
-          } else {
-            // To show removing animation first before emptying the list.
-            Future.delayed(AppConstants.animationDuration, () {
-              tasksCubit.editTask(
-                tasksList[index].copyWith(done: !tasksList[index].done),
-              );
-            });
-          }
+          tasksCubit.toggleDone(
+            changedTask,
+            isLast: tasksList.length - 1 == index,
+          );
         },
         onDelete: () {
           listkey.currentState!.removeItem(index, (context, animation) {
@@ -98,16 +91,10 @@ Widget _buildTaskList(
               backgroundColor: ColorsManager.deletedCardDeleteBackgroundColor,
             );
           }, duration: AppConstants.animationDuration);
-
-          if (tasksList.length - 1 != index) {
-            // Check if the item is the last in the list.
-            tasksCubit.deleteTask(tasksList[index].id);
-          } else {
-            // To show removing animation first before emptying the list.
-            Future.delayed(AppConstants.animationDuration, () {
-              tasksCubit.deleteTask(tasksList[index].id);
-            });
-          }
+          tasksCubit.deleteTask(
+            tasksList[index].id,
+            isLast: tasksList.length - 1 == index,
+          );
         },
 
         onEdit: () {
