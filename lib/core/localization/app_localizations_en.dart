@@ -24,6 +24,12 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get confirmDeleteCardMsg => 'The task will be deleted permanently.';
 
+  //Home Navigation Bar
+  @override
+  String get timer => 'Timer';
+  @override
+  String get settings => 'Settings';
+
   // Common Widgets
   @override
   String get cancel => 'Cancel';

@@ -24,6 +24,12 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get confirmDeleteCardMsg => 'سيتم حذف المهمة بشكل نهائي.';
 
+  //Home Navigation Bar
+  @override
+  String get timer => 'المؤقت';
+  @override
+  String get settings => 'الإعدادات';
+
   // Common Widgets
   @override
   String get cancel => 'إلغاء';
