@@ -3,6 +3,7 @@ import '/core/routing/routes.dart';
 import '/features/home/presentation/ui/home_screen.dart';
 import '/features/manage_task/presentation/ui/manage_task_screen.dart';
 import '/features/settings/ui/settings_screen.dart';
+import '../../features/theme/presentation/ui/theme_settings_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -23,6 +24,11 @@ class AppRouter {
       case RoutesManager.settings:
         return MaterialPageRoute(
           builder: (_) => SettingsScreen(),
+          settings: settings,
+        );
+      case RoutesManager.themeSettings:
+        return MaterialPageRoute(
+          builder: (_) => ThemeSettingsScreen(),
           settings: settings,
         );
       default:
