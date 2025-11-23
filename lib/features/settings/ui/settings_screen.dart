@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '/core/resources/assets_manager.dart';
 import '/core/widgets/spacing.dart';
 import '/core/helpers/extensions/context_extensions.dart';
+import '/core/routing/routes.dart';
 import 'components/settings_menu_button.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -19,9 +20,7 @@ class SettingsScreen extends StatelessWidget {
             SettingsMenuButton(
               lable: context.localize.themeSettings,
               svg: AssetsManager.themeIcon,
-              press: () {
-                // TODO: Navigate to Theme Settings
-              },
+              press: () => context.pushNamed(RoutesManager.themeSettings),
             ),
             SettingsMenuButton(
               lable: context.localize.languageSettings,

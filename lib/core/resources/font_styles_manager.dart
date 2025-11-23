@@ -62,55 +62,55 @@ class TextStylesManager {
   //        >>>DARK THEME<<<
   // Title
   static TextStyle titleLargeDark = TextStyle(
-    fontSize: 20,
+    fontSize: 17,
     fontWeight: FontWeightsManager.bold,
     color: ColorsManager.white,
   );
 
   static TextStyle titleMediumDark = TextStyle(
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeightsManager.semiBold,
     color: ColorsManager.white,
   );
 
   static TextStyle titleSmallDark = TextStyle(
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeightsManager.medium,
     color: ColorsManager.white,
   );
   // Body
   static TextStyle bodyLargeDark = TextStyle(
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: FontWeightsManager.medium,
     color: ColorsManager.white,
   );
 
   static TextStyle bodyMediumDark = TextStyle(
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.white,
   );
 
   static TextStyle bodySmallDark = TextStyle(
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.white,
   );
   // Caption
   static TextStyle captionLargeDark = TextStyle(
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: FontWeightsManager.medium,
     color: ColorsManager.grey,
   );
 
   static TextStyle captionMediumDark = TextStyle(
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.grey,
   );
 
   static TextStyle captionSmallDark = TextStyle(
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.grey,
   );
