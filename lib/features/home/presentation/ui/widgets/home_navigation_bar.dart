@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 import '/core/resources/assets_manager.dart';
+import '/core/routing/routes.dart';
 
 class HomeNavigationBar extends StatelessWidget {
   const HomeNavigationBar({super.key});
@@ -25,9 +26,7 @@ class HomeNavigationBar extends StatelessWidget {
           NavigationBarIconButton(
             lable: context.localize.settings,
             svgPath: AssetsManager.settingsIcon,
-            callback: () {
-              // TODO Navigate to Pomodoro Screen
-            },
+            callback: () => context.pushNamed(RoutesManager.settings),
           ),
         ],
       ),
