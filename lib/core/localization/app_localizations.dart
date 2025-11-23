@@ -88,6 +88,12 @@ abstract class AppLocalizations {
   // Settings Screen
   String get themeSettings;
   String get languageSettings;
+
+  // Theme Settings Screen
+  String get manageThemeMessage;
+  String get systemDefaultTheme;
+  String get lightTheme;
+  String get darkTheme;
 }
 
 class _AppLocalizationsDelegate

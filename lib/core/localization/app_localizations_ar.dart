@@ -67,4 +67,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get themeSettings => 'المظهر';
   @override
   String get languageSettings => 'اللغة';
+
+  // Theme Settings Screen
+  @override
+  String get manageThemeMessage => "إعدادات المظهر";
+  @override
+  String get systemDefaultTheme => "الوضع الافتراضي للجهاز";
+  @override
+  String get lightTheme => "الوضع المشرق";
+  @override
+  String get darkTheme => "الوضع المظلم";
 }
