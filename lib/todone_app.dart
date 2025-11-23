@@ -8,6 +8,7 @@ import '/core/localization/app_localizations.dart';
 import '/core/theming/theme_manager.dart';
 import 'features/home/presentation/controller/tasks_cubit.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
+import 'features/theme/presentation/controller/theme_cubit.dart';
 
 class ToDoneApp extends StatelessWidget {
   const ToDoneApp({super.key});
@@ -18,19 +19,25 @@ class ToDoneApp extends StatelessWidget {
       providers: [
         BlocProvider<TasksCubit>(create: (_) => getIt()),
         BlocProvider<ManageTaskCubit>(create: (_) => getIt()),
+        BlocProvider<ThemeCubit>(create: (_) => getIt()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: AppConstants.appName,
-        initialRoute: RoutesManager.home,
-        onGenerateRoute: AppRouter.onGenerateRoute,
-        supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        locale: Locale(AppConstants.englishLocaleCode),
-        themeMode: ThemeMode.system,
-        theme: ThemeManager.lightTheme,
-        darkTheme: ThemeManager.darkTheme,
-        themeAnimationDuration: Duration.zero,
+      child: BlocSelector<ThemeCubit, ThemeState, ThemeMode>(
+        selector: (state) => state.themeMode,
+        builder: (context, themeMode) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: AppConstants.appName,
+            initialRoute: RoutesManager.home,
+            onGenerateRoute: AppRouter.onGenerateRoute,
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            locale: Locale(AppConstants.englishLocaleCode),
+            themeMode: themeMode,
+            theme: ThemeManager.lightTheme,
+            darkTheme: ThemeManager.darkTheme,
+            themeAnimationDuration: Duration.zero,
+          );
+        },
       ),
     );
   }

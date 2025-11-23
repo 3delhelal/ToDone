@@ -1,11 +1,17 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../features/theme/data/data_source/base_theme_data_source.dart';
 import '/core/networking/tasks_database/base_tasks_db.dart';
 import '/core/networking/tasks_database/hive_tasks_database.dart';
 import '/features/home/data/repo/tasks_repo.dart';
 import '/features/home/domain/repo/base_tasks_repo.dart';
 import '/features/home/presentation/controller/tasks_cubit.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
+import '/features/theme/domain/repo/base_theme_repo.dart';
+import '/features/theme/presentation/controller/theme_cubit.dart';
+import '/features/theme/data/data_source/theme_data_source.dart';
+import '/features/theme/data/repo/theme_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -24,4 +30,11 @@ Future<void> setupDI() async {
 
   // Manage Task Cubit
   getIt.registerLazySingleton<ManageTaskCubit>(() => ManageTaskCubit(getIt()));
+
+  // Shared Preferences.
+  var sharedPrefs = await SharedPreferences.getInstance();
+  // Theme Dependencies
+  getIt.registerSingleton<BaseThemeDataSource>(ThemeDataSource(sharedPrefs));
+  getIt.registerSingleton<BaseThemeRepository>(ThemeRepository(getIt()));
+  getIt.registerSingleton(ThemeCubit(getIt()));
 }
