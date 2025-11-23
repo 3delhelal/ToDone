@@ -51,6 +51,10 @@ abstract class AppLocalizations {
 
   String get confirmDeleteCardMsg;
 
+  //Home Navigation Bar
+  String get timer;
+  String get settings;
+
   // Common Widgets
   String get cancel;
 
@@ -80,6 +84,10 @@ abstract class AppLocalizations {
   String get time;
 
   String get save;
+
+  // Settings Screen
+  String get themeSettings;
+  String get languageSettings;
 }
 
 class _AppLocalizationsDelegate

@@ -24,6 +24,12 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get confirmDeleteCardMsg => 'The task will be deleted permanently.';
 
+  //Home Navigation Bar
+  @override
+  String get timer => 'Timer';
+  @override
+  String get settings => 'Settings';
+
   // Common Widgets
   @override
   String get cancel => 'Cancel';
@@ -55,4 +61,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get time => 'Time';
   @override
   String get save => 'Save';
+
+  // Settings Screen
+  @override
+  String get themeSettings => 'Theme';
+  @override
+  String get languageSettings => 'Language';
 }

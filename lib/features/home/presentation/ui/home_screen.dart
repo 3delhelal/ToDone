@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/features/home/presentation/ui/widgets/home_floating_button.dart';
 import '/features/home/presentation/ui/widgets/home_body.dart';
+import '/features/home/presentation/ui/widgets/home_navigation_bar.dart';
 import 'widgets/home_appbar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen>
       appBar: HomeAppbar(tabController: _tabController),
       body: HomeBody(tabController: _tabController),
       floatingActionButton: HomeFloatingButton(),
+      bottomNavigationBar: HomeNavigationBar(),
     );
   }
 }
