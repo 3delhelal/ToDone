@@ -7,4 +7,7 @@ class AssetsManager {
   static const String settingsIcon = 'assets/svg/settings_icon.svg';
   // Manage Task Screen
   static const String calendarIcon = 'assets/svg/calendar_icon.svg';
+  // Settings Screen
+  static const String themeIcon = 'assets/svg/theme_icon.svg';
+  static const String languageIcon = 'assets/svg/language_icon.svg';
 }

@@ -61,4 +61,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get time => 'Time';
   @override
   String get save => 'Save';
+
+  // Settings Screen
+  @override
+  String get themeSettings => 'Theme';
+  @override
+  String get languageSettings => 'Language';
 }

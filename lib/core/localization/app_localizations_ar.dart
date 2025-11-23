@@ -61,4 +61,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get time => 'الوقت';
   @override
   String get save => 'حفظ';
+
+  // Settings Screen
+  @override
+  String get themeSettings => 'المظهر';
+  @override
+  String get languageSettings => 'اللغة';
 }

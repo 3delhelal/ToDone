@@ -84,6 +84,10 @@ abstract class AppLocalizations {
   String get time;
 
   String get save;
+
+  // Settings Screen
+  String get themeSettings;
+  String get languageSettings;
 }
 
 class _AppLocalizationsDelegate
