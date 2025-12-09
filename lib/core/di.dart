@@ -1,7 +1,11 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../features/theme/data/data_source/base_theme_data_source.dart';
+import '/features/sound/data/data_sources/tasks_sound_player.dart';
+import '/features/sound/domain/repositories/base_sound_repository.dart';
+import '/features/sound/data/data_sources/sound_player_interface.dart';
+import '/features/sound/data/repositories/sound_repository.dart';
+import '/features/theme/data/data_source/base_theme_data_source.dart';
 import '/core/networking/tasks_database/base_tasks_db.dart';
 import '/core/networking/tasks_database/hive_tasks_database.dart';
 import '/features/home/data/repo/tasks_repo.dart';
@@ -20,7 +24,6 @@ Future<void> setupDI() async {
   // - Hive Database
   var box = await Hive.openBox('tasksBox');
   getIt.registerLazySingleton<BaseTasksDatabase>(() => HiveTasksDatabase(box));
-
   // Tasks Repository
   getIt.registerLazySingleton<BaseTaksRepository>(
     () => TasksRepository(getIt()),
@@ -37,4 +40,12 @@ Future<void> setupDI() async {
   getIt.registerSingleton<BaseThemeDataSource>(ThemeDataSource(sharedPrefs));
   getIt.registerSingleton<BaseThemeRepository>(ThemeRepository(getIt()));
   getIt.registerSingleton(ThemeCubit(getIt()));
+
+  // Sound Feature
+  getIt.registerLazySingleton<SoundPlayerDataSource>(() => TasksSoundPlayer());
+  // Initialize Sound Datasource
+  await getIt<SoundPlayerDataSource>().initialize();
+  getIt.registerLazySingleton<BaseSoundRepository>(
+    () => SoundRepositoryImpl(soundPlayer: getIt()),
+  );
 }
