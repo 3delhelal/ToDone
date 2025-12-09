@@ -1,4 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/features/sound/domain/repositories/base_sound_repository.dart';
+import '/core/helpers/app_enums.dart';
+import '/core/di.dart';
 import '/core/constants/app_constants.dart';
 import '/features/home/presentation/controller/dummy_data.dart';
 import '/features/home/domain/repo/base_tasks_repo.dart';
@@ -53,6 +56,15 @@ class TasksCubit extends Cubit<TasksState> {
   }
 
   void toggleDone(Task newTask, {bool isLast = false}) async {
+    if (newTask.done) {
+      getIt<BaseSoundRepository>().playTaskSound(
+        soundType: SoundType.taskComplete,
+      );
+    } else {
+      getIt<BaseSoundRepository>().playTaskSound(
+        soundType: SoundType.taskUndone,
+      );
+    }
     final updatedTasks = state.tasks.map((task) {
       if (task.id == newTask.id) {
         return newTask;
@@ -72,6 +84,8 @@ class TasksCubit extends Cubit<TasksState> {
   }
 
   void deleteTask(String id, {bool isLast = false}) async {
+    getIt<BaseSoundRepository>().playTaskSound(soundType: SoundType.taskDelete);
+
     final updatedTasks = state.tasks.where((task) => task.id != id).toList();
     if (!isLast) {
       // Check if the item is the last in the list.
