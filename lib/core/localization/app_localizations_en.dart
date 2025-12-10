@@ -95,7 +95,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get createTaskMsg => "Choose task to work on";
-
   @override
   String get startWIthoutTaskMsg => "Start without a task";
+  @override
+  String get withoutTask => "Without a task";
+  @override
+  String get enjoyBreak => "Enjoy your break!";
+  @override
+  String get focusTime => "Focus Time";
+  @override
+  String get breakTime => "Break Time";
+  @override
+  String get endBreak => "End break";
+  @override
+  String get endSession => "End Session";
 }

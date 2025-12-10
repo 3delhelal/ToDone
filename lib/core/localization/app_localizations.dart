@@ -111,6 +111,18 @@ abstract class AppLocalizations {
   String get startWIthoutTaskMsg;
 
   String get minute;
+
+  String get enjoyBreak;
+
+  String get withoutTask;
+
+  String get focusTime;
+
+  String get breakTime;
+
+  String get endBreak;
+
+  String get endSession;
 }
 
 class _AppLocalizationsDelegate

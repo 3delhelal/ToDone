@@ -98,4 +98,18 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get startWIthoutTaskMsg => "إبدأ بدون مهمة";
+
+  @override
+  String get withoutTask => "بدون مهمة";
+  @override
+  @override
+  String get enjoyBreak => "إستمتع بوقت الراحة!";
+  @override
+  String get focusTime => "وقت التركيز";
+  @override
+  String get breakTime => "وقت الراحة";
+  @override
+  String get endBreak => "إنهاء الراحة";
+  @override
+  String get endSession => "إنهاء الجلسة";
 }
