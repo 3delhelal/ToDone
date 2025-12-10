@@ -77,4 +77,25 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lightTheme => "الوضع المشرق";
   @override
   String get darkTheme => "الوضع المظلم";
+
+  // Pomodoro
+  @override
+  String get pomodoroTitle => "بومودورو";
+  @override
+  String get chooseSessionTime => "حدد وقت الجلسة";
+  @override
+  String get minute => "دقيقة";
+  @override
+  String get startSession => "إبدا الجلسة";
+  @override
+  String get pomodoroQuestion => "ماهو البومودورو؟";
+  @override
+  String get pomodoroAnswer =>
+      "بومودورو هي تقنية لإدارة الوقت تساعدك على البقاء مركزًا من خلال العمل في فترات قصيرة (تسمى جلسات) تليها فترات راحة قصيرة.";
+
+  @override
+  String get createTaskMsg => "حدد مهمة للعمل عليها";
+
+  @override
+  String get startWIthoutTaskMsg => "إبدأ بدون مهمة";
 }

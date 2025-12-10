@@ -94,6 +94,23 @@ abstract class AppLocalizations {
   String get systemDefaultTheme;
   String get lightTheme;
   String get darkTheme;
+
+  // Pomodoro
+  String get pomodoroTitle;
+
+  String get chooseSessionTime;
+
+  String get startSession;
+
+  String get pomodoroQuestion;
+
+  String get pomodoroAnswer;
+
+  String get createTaskMsg;
+
+  String get startWIthoutTaskMsg;
+
+  String get minute;
 }
 
 class _AppLocalizationsDelegate

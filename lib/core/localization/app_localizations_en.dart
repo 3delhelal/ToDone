@@ -77,4 +77,25 @@ class AppLocalizationsEn extends AppLocalizations {
   get lightTheme => "Light Theme";
   @override
   get darkTheme => "Dark Theme";
+
+  // Pomodoro
+  @override
+  String get pomodoroTitle => "Pomodoro";
+  @override
+  String get chooseSessionTime => "Choose session time";
+  @override
+  String get minute => "Minute";
+  @override
+  String get startSession => "Start session";
+  @override
+  String get pomodoroQuestion => "What is Pomodoro?";
+  @override
+  String get pomodoroAnswer =>
+      "Pomodoro is a time‑management technique that helps you stay focused by working in short bursts \n(called sessions) followed by short breaks.";
+
+  @override
+  String get createTaskMsg => "Choose task to work on";
+
+  @override
+  String get startWIthoutTaskMsg => "Start without a task";
 }

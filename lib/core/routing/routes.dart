@@ -3,4 +3,5 @@ class RoutesManager {
   static const String manageTask = 'manage-task';
   static const String settings = 'settings';
   static const String themeSettings = 'theme-settings';
+  static const String pomodoro = 'pomodoro';
 }
