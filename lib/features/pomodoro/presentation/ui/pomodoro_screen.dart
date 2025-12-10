@@ -5,6 +5,8 @@ import '/core/helpers/extensions/context_extensions.dart';
 import '/features/pomodoro/presentation/ui/components/active_body/active_timer_body.dart';
 import '/features/pomodoro/presentation/ui/components/standby_body/standby_body.dart';
 import '../controller/pomodoro_cubit.dart';
+import 'components/completed_cycle_body/completed_cycle_body.dart';
+import 'components/finished_session_body/session_finished_body.dart';
 
 class PomoDoroScreen extends StatefulWidget {
   const PomoDoroScreen({super.key});
@@ -72,12 +74,10 @@ class _PomoDoroScreenState extends State<PomoDoroScreen>
                 taskName: state.taskName,
               );
             } else if (state is FinishedPomodoroState) {
-              // TODO: Implement finished state
-
               if (state.type == PomodoroType.session) {
-                throw UnimplementedError();
+                return FinishedSessionBody();
               } else {
-                throw UnimplementedError();
+                return CycleCompletedBody();
               }
             } else {
               return const StandbyBody();

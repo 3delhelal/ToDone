@@ -123,6 +123,18 @@ abstract class AppLocalizations {
   String get endBreak;
 
   String get endSession;
+
+  String get sessionComplete;
+
+  String get breakTimeMsg;
+
+  String get startBreak;
+
+  String get cycleCompleted;
+
+  String get finishedCycleMsg;
+
+  String get startNewCycle;
 }
 
 class _AppLocalizationsDelegate

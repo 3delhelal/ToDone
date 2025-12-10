@@ -109,4 +109,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get endBreak => "End break";
   @override
   String get endSession => "End Session";
+  @override
+  String get sessionComplete => "Session Completed 👏";
+  @override
+  String get breakTimeMsg => "Time to take a break and recharge your focus.";
+
+  @override
+  String get startBreak => "Start break";
+  @override
+  String get cycleCompleted => "Cycle Completed 🎉";
+
+  @override
+  String get finishedCycleMsg =>
+      "You've finished a full Pomodoro cycle! Great job staying focused!";
+
+  @override
+  String get startNewCycle => "Start new Cycle";
 }

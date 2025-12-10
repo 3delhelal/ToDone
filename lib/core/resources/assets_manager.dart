@@ -18,4 +18,5 @@ class AssetsManager {
   // Pomodoro
   static const String sessionIcon = 'assets/svg/session_icon.svg';
   static const String breakIcon = 'assets/svg/break_icon.svg';
+  static const String successLottieAnimation = 'assets/lottie/success.json';
 }

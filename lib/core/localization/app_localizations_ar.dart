@@ -112,4 +112,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get endBreak => "إنهاء الراحة";
   @override
   String get endSession => "إنهاء الجلسة";
+  @override
+  String get sessionComplete => "إكتملت الجلسة 👏";
+  @override
+  String get breakTimeMsg => "حان وقت الراحة وإستعادة التركيز.";
+
+  @override
+  String get startBreak => "إبدأ الراحة";
+
+  @override
+  String get cycleCompleted => "إكتملت الدورة 🎉";
+
+  @override
+  String get finishedCycleMsg =>
+      "أحسنت! لقد أكملت دورة بومودورو كاملة، عمل رائع.";
+
+  @override
+  String get startNewCycle => "إبدأ دورة جديدة";
 }
