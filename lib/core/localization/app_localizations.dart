@@ -52,7 +52,7 @@ abstract class AppLocalizations {
   String get confirmDeleteCardMsg;
 
   //Home Navigation Bar
-  String get timer;
+  String get pomodoro;
   String get settings;
 
   // Common Widgets

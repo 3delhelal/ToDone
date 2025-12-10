@@ -26,7 +26,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   //Home Navigation Bar
   @override
-  String get timer => 'المؤقت';
+  String get pomodoro => 'بومودورو';
   @override
   String get settings => 'الإعدادات';
 

@@ -17,7 +17,7 @@ class HomeNavigationBar extends StatelessWidget {
 
         children: [
           NavigationBarIconButton(
-            lable: context.localize.timer,
+            lable: context.localize.pomodoro,
             svgPath: AssetsManager.clockIcon,
             callback: () {
               context.pushNamed(RoutesManager.pomodoro);

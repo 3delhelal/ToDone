@@ -26,7 +26,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   //Home Navigation Bar
   @override
-  String get timer => 'Timer';
+  String get pomodoro => 'Pomodoro';
   @override
   String get settings => 'Settings';
 
