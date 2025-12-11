@@ -1,9 +1,9 @@
+import '/core/constants/language_constants.dart';
 import 'app_localizations.dart';
-import '../constants/app_constants.dart';
 
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn([super.locale = AppConstants.englishLocaleCode]);
+  AppLocalizationsEn([super.locale = LanguageConstants.enLanguageCode]);
 
   @override
   String get welcomeMessage => 'Hello World!';

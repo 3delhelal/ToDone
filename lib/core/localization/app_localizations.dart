@@ -3,9 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
+import '/core/constants/language_constants.dart';
 import 'app_localizations_ar.dart';
+import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
-import '/core/constants/app_constants.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_fr.dart';
 
 abstract class AppLocalizations {
   AppLocalizations(String locale)
@@ -30,8 +33,11 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale(AppConstants.englishLocaleCode),
-    Locale(AppConstants.arabicLocaleCode),
+    Locale(LanguageConstants.enLanguageCode),
+    Locale(LanguageConstants.arLanguageCode),
+    Locale(LanguageConstants.esLanguageCode),
+    Locale(LanguageConstants.deLanguageCode),
+    Locale(LanguageConstants.frLanguageCode),
   ];
 
   String get welcomeMessage;
@@ -159,8 +165,11 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) => <String>[
-    AppConstants.arabicLocaleCode,
-    AppConstants.englishLocaleCode,
+    LanguageConstants.enLanguageCode,
+    LanguageConstants.arLanguageCode,
+    LanguageConstants.esLanguageCode,
+    LanguageConstants.deLanguageCode,
+    LanguageConstants.frLanguageCode,
   ].contains(locale.languageCode);
 
   @override
@@ -169,10 +178,16 @@ class _AppLocalizationsDelegate
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
   switch (locale.languageCode) {
-    case AppConstants.arabicLocaleCode:
+    case LanguageConstants.arLanguageCode:
       return AppLocalizationsAr();
-    case AppConstants.englishLocaleCode:
+    case LanguageConstants.enLanguageCode:
       return AppLocalizationsEn();
+    case LanguageConstants.esLanguageCode:
+      return AppLocalizationsEs();
+    case LanguageConstants.deLanguageCode:
+      return AppLocalizationsDe();
+    case LanguageConstants.frLanguageCode:
+      return AppLocalizationsFr();
   }
 
   throw FlutterError(

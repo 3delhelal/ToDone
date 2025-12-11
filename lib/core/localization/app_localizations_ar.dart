@@ -1,9 +1,9 @@
+import '/core/constants/language_constants.dart';
 import 'app_localizations.dart';
-import '../constants/app_constants.dart';
 
 /// The translations for Arabic (`ar`).
 class AppLocalizationsAr extends AppLocalizations {
-  AppLocalizationsAr([super.locale = AppConstants.englishLocaleCode]);
+  AppLocalizationsAr([super.locale = LanguageConstants.arLanguageCode]);
 
   @override
   String get welcomeMessage => 'مرحباً بالعالم!';
