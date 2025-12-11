@@ -129,4 +129,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get startNewCycle => "إبدأ دورة جديدة";
+
+  // Language Feature.
+  @override
+  String get selectLanguageMessage => "إختر اللغة";
+  @override
+  String get unKnown => "غير معروف";
+
+  // Languages
+  @override
+  String get ar => 'العربية';
+  @override
+  String get en => 'الإنجليزية';
+  @override
+  String get es => 'الإسبانية';
+  @override
+  String get de => 'الألمانية';
+  @override
+  String get fr => 'الفرنسية';
 }

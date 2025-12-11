@@ -135,6 +135,17 @@ abstract class AppLocalizations {
   String get finishedCycleMsg;
 
   String get startNewCycle;
+
+  // Language Feature.
+  String get selectLanguageMessage;
+  String get unKnown;
+
+  // Languages
+  String get en;
+  String get ar;
+  String get es;
+  String get de;
+  String get fr;
 }
 
 class _AppLocalizationsDelegate
