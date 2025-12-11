@@ -59,7 +59,7 @@ class _PomoDoroScreenState extends State<PomoDoroScreen>
               return ActiveTimerBody(
                 controller: _pulseController,
                 isSession: state.type == PomodoroType.session,
-                isRunning: false,
+                isRunning: true,
                 remainingSeconds: state.remainingSeconds,
                 totalSeconds: state.seconds,
                 taskName: state.taskName,
