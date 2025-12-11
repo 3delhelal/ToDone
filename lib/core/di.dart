@@ -6,7 +6,7 @@ import '/features/pomodoro/data/data_source/pomodoro_datasource.dart';
 import '/features/pomodoro/data/repo/pomodoro_repo.dart';
 import '/features/pomodoro/domain/repo/base_pomodoro_repo.dart';
 import '/features/pomodoro/presentation/controller/pomodoro_cubit.dart';
-import '/features/sound/data/data_sources/tasks_sound_player.dart';
+import '/features/sound/data/data_sources/app_sound_player.dart';
 import '/features/sound/domain/repositories/base_sound_repository.dart';
 import '/features/sound/data/data_sources/sound_player_interface.dart';
 import '/features/sound/data/repositories/sound_repository.dart';
