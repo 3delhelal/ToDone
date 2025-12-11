@@ -1,9 +1,9 @@
+import '/core/constants/language_constants.dart';
 import 'app_localizations.dart';
-import '../constants/app_constants.dart';
 
 /// The translations for Arabic (`ar`).
 class AppLocalizationsAr extends AppLocalizations {
-  AppLocalizationsAr([super.locale = AppConstants.englishLocaleCode]);
+  AppLocalizationsAr([super.locale = LanguageConstants.arLanguageCode]);
 
   @override
   String get welcomeMessage => 'مرحباً بالعالم!';
@@ -129,4 +129,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get startNewCycle => "إبدأ دورة جديدة";
+
+  // Language Feature.
+  @override
+  String get selectLanguageMessage => "إختر اللغة";
+  @override
+  String get unKnown => "غير معروف";
+
+  // Languages
+  @override
+  String get ar => 'العربية';
+  @override
+  String get en => 'الإنجليزية';
+  @override
+  String get es => 'الإسبانية';
+  @override
+  String get de => 'الألمانية';
+  @override
+  String get fr => 'الفرنسية';
 }

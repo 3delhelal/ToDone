@@ -26,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
               lable: context.localize.languageSettings,
               svg: AssetsManager.languageIcon,
               press: () {
-                // TODO: Navigate to Language Settings
+                context.pushNamed(RoutesManager.languageSettings);
               },
             ),
           ],
