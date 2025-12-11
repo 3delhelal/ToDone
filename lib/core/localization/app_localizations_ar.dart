@@ -26,7 +26,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   //Home Navigation Bar
   @override
-  String get timer => 'المؤقت';
+  String get pomodoro => 'بومودورو';
   @override
   String get settings => 'الإعدادات';
 
@@ -77,4 +77,56 @@ class AppLocalizationsAr extends AppLocalizations {
   String get lightTheme => "الوضع المشرق";
   @override
   String get darkTheme => "الوضع المظلم";
+
+  // Pomodoro
+  @override
+  String get pomodoroTitle => "بومودورو";
+  @override
+  String get chooseSessionTime => "حدد وقت الجلسة";
+  @override
+  String get minute => "دقيقة";
+  @override
+  String get startSession => "إبدا الجلسة";
+  @override
+  String get pomodoroQuestion => "ماهو البومودورو؟";
+  @override
+  String get pomodoroAnswer =>
+      "بومودورو هي تقنية لإدارة الوقت تساعدك على البقاء مركزًا من خلال العمل في فترات قصيرة (تسمى جلسات) تليها فترات راحة قصيرة.";
+
+  @override
+  String get createTaskMsg => "حدد مهمة للعمل عليها";
+
+  @override
+  String get startWIthoutTaskMsg => "إبدأ بدون مهمة";
+
+  @override
+  String get withoutTask => "بدون مهمة";
+  @override
+  @override
+  String get enjoyBreak => "إستمتع بوقت الراحة!";
+  @override
+  String get focusTime => "وقت التركيز";
+  @override
+  String get breakTime => "وقت الراحة";
+  @override
+  String get endBreak => "إنهاء الراحة";
+  @override
+  String get endSession => "إنهاء الجلسة";
+  @override
+  String get sessionComplete => "إكتملت الجلسة 👏";
+  @override
+  String get breakTimeMsg => "حان وقت الراحة وإستعادة التركيز.";
+
+  @override
+  String get startBreak => "إبدأ الراحة";
+
+  @override
+  String get cycleCompleted => "إكتملت الدورة 🎉";
+
+  @override
+  String get finishedCycleMsg =>
+      "أحسنت! لقد أكملت دورة بومودورو كاملة، عمل رائع.";
+
+  @override
+  String get startNewCycle => "إبدأ دورة جديدة";
 }

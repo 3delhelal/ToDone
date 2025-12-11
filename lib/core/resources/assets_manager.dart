@@ -15,4 +15,8 @@ class AssetsManager {
   static const String taskDeleteSound = 'assets/sound/task_delete.mp3';
   static const String taskUndoneSound = 'assets/sound/task_undone.mp3';
   static const String taskCreatedSound = 'assets/sound/task_created.mp3';
+  // Pomodoro
+  static const String sessionIcon = 'assets/svg/session_icon.svg';
+  static const String breakIcon = 'assets/svg/break_icon.svg';
+  static const String successLottieAnimation = 'assets/lottie/success.json';
 }

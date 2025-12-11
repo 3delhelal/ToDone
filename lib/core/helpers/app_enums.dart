@@ -6,3 +6,6 @@ enum MangeTaskScreenType { add, edit }
 
 // Sound
 enum SoundType { taskComplete, taskDelete, taskUndone, taskCreated }
+
+// Pomodoro
+enum PomodoroType { session, breaking }

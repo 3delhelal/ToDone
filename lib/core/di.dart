@@ -1,6 +1,11 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '/features/pomodoro/data/data_source/base_pomodoro_datasource.dart';
+import '/features/pomodoro/data/data_source/pomodoro_datasource.dart';
+import '/features/pomodoro/data/repo/pomodoro_repo.dart';
+import '/features/pomodoro/domain/repo/base_pomodoro_repo.dart';
+import '/features/pomodoro/presentation/controller/pomodoro_cubit.dart';
 import '/features/sound/data/data_sources/tasks_sound_player.dart';
 import '/features/sound/domain/repositories/base_sound_repository.dart';
 import '/features/sound/data/data_sources/sound_player_interface.dart';
@@ -48,4 +53,10 @@ Future<void> setupDI() async {
   getIt.registerLazySingleton<BaseSoundRepository>(
     () => SoundRepositoryImpl(soundPlayer: getIt()),
   );
+  // Pomodoro
+  getIt.registerLazySingleton<BasePomodoroDataSource>(
+    () => PomodoroDataSource(sharedPrefs),
+  );
+  getIt.registerLazySingleton<BasePomodoroRepo>(() => PomodoroRepo(getIt()));
+  getIt.registerLazySingleton<PomodoroCubit>(() => PomodoroCubit(getIt()));
 }

@@ -26,7 +26,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   //Home Navigation Bar
   @override
-  String get timer => 'Timer';
+  String get pomodoro => 'Pomodoro';
   @override
   String get settings => 'Settings';
 
@@ -77,4 +77,52 @@ class AppLocalizationsEn extends AppLocalizations {
   get lightTheme => "Light Theme";
   @override
   get darkTheme => "Dark Theme";
+
+  // Pomodoro
+  @override
+  String get pomodoroTitle => "Pomodoro";
+  @override
+  String get chooseSessionTime => "Choose session time";
+  @override
+  String get minute => "Minute";
+  @override
+  String get startSession => "Start session";
+  @override
+  String get pomodoroQuestion => "What is Pomodoro?";
+  @override
+  String get pomodoroAnswer =>
+      "Pomodoro is a time‑management technique that helps you stay focused by working in short bursts \n(called sessions) followed by short breaks.";
+
+  @override
+  String get createTaskMsg => "Choose task to work on";
+  @override
+  String get startWIthoutTaskMsg => "Start without a task";
+  @override
+  String get withoutTask => "Without a task";
+  @override
+  String get enjoyBreak => "Enjoy your break!";
+  @override
+  String get focusTime => "Focus Time";
+  @override
+  String get breakTime => "Break Time";
+  @override
+  String get endBreak => "End break";
+  @override
+  String get endSession => "End Session";
+  @override
+  String get sessionComplete => "Session Completed 👏";
+  @override
+  String get breakTimeMsg => "Time to take a break and recharge your focus.";
+
+  @override
+  String get startBreak => "Start break";
+  @override
+  String get cycleCompleted => "Cycle Completed 🎉";
+
+  @override
+  String get finishedCycleMsg =>
+      "You've finished a full Pomodoro cycle! Great job staying focused!";
+
+  @override
+  String get startNewCycle => "Start new Cycle";
 }

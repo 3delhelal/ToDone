@@ -9,6 +9,7 @@ import '/core/theming/theme_manager.dart';
 import 'features/home/presentation/controller/tasks_cubit.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 import 'features/theme/presentation/controller/theme_cubit.dart';
+import '/features/pomodoro/presentation/controller/pomodoro_cubit.dart';
 
 class ToDoneApp extends StatelessWidget {
   const ToDoneApp({super.key});
@@ -20,6 +21,7 @@ class ToDoneApp extends StatelessWidget {
         BlocProvider<TasksCubit>(create: (_) => getIt()),
         BlocProvider<ManageTaskCubit>(create: (_) => getIt()),
         BlocProvider<ThemeCubit>(create: (_) => getIt()),
+        BlocProvider<PomodoroCubit>(create: (_) => getIt()),
       ],
       child: BlocSelector<ThemeCubit, ThemeState, ThemeMode>(
         selector: (state) => state.themeMode,

@@ -52,7 +52,7 @@ abstract class AppLocalizations {
   String get confirmDeleteCardMsg;
 
   //Home Navigation Bar
-  String get timer;
+  String get pomodoro;
   String get settings;
 
   // Common Widgets
@@ -94,6 +94,47 @@ abstract class AppLocalizations {
   String get systemDefaultTheme;
   String get lightTheme;
   String get darkTheme;
+
+  // Pomodoro
+  String get pomodoroTitle;
+
+  String get chooseSessionTime;
+
+  String get startSession;
+
+  String get pomodoroQuestion;
+
+  String get pomodoroAnswer;
+
+  String get createTaskMsg;
+
+  String get startWIthoutTaskMsg;
+
+  String get minute;
+
+  String get enjoyBreak;
+
+  String get withoutTask;
+
+  String get focusTime;
+
+  String get breakTime;
+
+  String get endBreak;
+
+  String get endSession;
+
+  String get sessionComplete;
+
+  String get breakTimeMsg;
+
+  String get startBreak;
+
+  String get cycleCompleted;
+
+  String get finishedCycleMsg;
+
+  String get startNewCycle;
 }
 
 class _AppLocalizationsDelegate
