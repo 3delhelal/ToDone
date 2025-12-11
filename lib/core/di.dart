@@ -1,6 +1,11 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '/features/language/data/data_source/base_language_data_source.dart';
+import '/features/language/data/data_source/language_data_source.dart';
+import '/features/language/data/repo/language_repository.dart';
+import '/features/language/domain/repo/base_lanaguage_repo.dart';
+import '/features/language/presentation/controller/language_cubit.dart';
 import '/features/pomodoro/data/data_source/base_pomodoro_datasource.dart';
 import '/features/pomodoro/data/data_source/pomodoro_datasource.dart';
 import '/features/pomodoro/data/repo/pomodoro_repo.dart';
@@ -59,4 +64,11 @@ Future<void> setupDI() async {
   );
   getIt.registerLazySingleton<BasePomodoroRepo>(() => PomodoroRepo(getIt()));
   getIt.registerLazySingleton<PomodoroCubit>(() => PomodoroCubit(getIt()));
+
+  // Language Dependencies
+  getIt.registerSingleton<BaseLanauageDataSource>(
+    LanguageDataSource(sharedPrefs),
+  );
+  getIt.registerSingleton<BaseLaguageRepository>(LanguageRepository(getIt()));
+  getIt.registerSingleton(LanguageCubit(getIt()));
 }

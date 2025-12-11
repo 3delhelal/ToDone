@@ -10,6 +10,7 @@ import 'features/home/presentation/controller/tasks_cubit.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 import 'features/theme/presentation/controller/theme_cubit.dart';
 import '/features/pomodoro/presentation/controller/pomodoro_cubit.dart';
+import '/features/language/presentation/controller/language_cubit.dart';
 
 class ToDoneApp extends StatelessWidget {
   const ToDoneApp({super.key});
@@ -22,22 +23,28 @@ class ToDoneApp extends StatelessWidget {
         BlocProvider<ManageTaskCubit>(create: (_) => getIt()),
         BlocProvider<ThemeCubit>(create: (_) => getIt()),
         BlocProvider<PomodoroCubit>(create: (_) => getIt()),
+        BlocProvider<LanguageCubit>(create: (_) => getIt()),
       ],
-      child: BlocSelector<ThemeCubit, ThemeState, ThemeMode>(
-        selector: (state) => state.themeMode,
-        builder: (context, themeMode) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: AppConstants.appName,
-            initialRoute: RoutesManager.home,
-            onGenerateRoute: AppRouter.onGenerateRoute,
-            supportedLocales: AppLocalizations.supportedLocales,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            locale: Locale(AppConstants.englishLocaleCode),
-            themeMode: themeMode,
-            theme: ThemeManager.lightTheme,
-            darkTheme: ThemeManager.darkTheme,
-            themeAnimationDuration: Duration.zero,
+      child: BlocSelector<LanguageCubit, LanguageState, String>(
+        selector: (languageCubit) => languageCubit.languageCode,
+        builder: (context, languageCode) {
+          return BlocSelector<ThemeCubit, ThemeState, ThemeMode>(
+            selector: (state) => state.themeMode,
+            builder: (context, themeMode) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: AppConstants.appName,
+                initialRoute: RoutesManager.home,
+                onGenerateRoute: AppRouter.onGenerateRoute,
+                supportedLocales: AppLocalizations.supportedLocales,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                locale: Locale(languageCode),
+                themeMode: themeMode,
+                theme: ThemeManager.lightTheme,
+                darkTheme: ThemeManager.darkTheme,
+                themeAnimationDuration: Duration.zero,
+              );
+            },
           );
         },
       ),
