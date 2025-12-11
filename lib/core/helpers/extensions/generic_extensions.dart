@@ -24,6 +24,10 @@ extension SoundTypeExtension on SoundType {
         return AssetsManager.taskUndoneSound;
       case SoundType.taskCreated:
         return AssetsManager.taskCreatedSound;
+      case SoundType.sessionFinished:
+        return AssetsManager.sessionFinishedSound;
+      case SoundType.breakFinished:
+        return AssetsManager.breakFinishedSound;
     }
   }
 }

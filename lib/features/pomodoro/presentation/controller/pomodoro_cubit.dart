@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/core/di.dart';
+import '../../../sound/domain/repositories/base_sound_repository.dart';
 import '/core/helpers/app_enums.dart';
 import '/core/constants/app_constants.dart';
 import '/features/pomodoro/domain/repo/base_pomodoro_repo.dart';
@@ -108,9 +110,7 @@ class PomodoroCubit extends Cubit<PomodoroState> {
   }
 
   Future<void> endCurrentSession() async {
-    _stopTimer();
-
-    emit(FinishedPomodoroState(type: _currentPomodorotype));
+    _onTimerComplete();
   }
 
   Future<void> cancelPomodoro() async {
@@ -144,6 +144,15 @@ class PomodoroCubit extends Cubit<PomodoroState> {
   }
 
   Future<void> _onTimerComplete() async {
+    if (_currentPomodorotype == PomodoroType.session) {
+      getIt<BaseSoundRepository>().playTaskSound(
+        soundType: SoundType.sessionFinished,
+      );
+    } else {
+      getIt<BaseSoundRepository>().playTaskSound(
+        soundType: SoundType.breakFinished,
+      );
+    }
     _stopTimer();
 
     emit(FinishedPomodoroState(type: _currentPomodorotype));

@@ -47,7 +47,7 @@ Future<void> setupDI() async {
   getIt.registerSingleton(ThemeCubit(getIt()));
 
   // Sound Feature
-  getIt.registerLazySingleton<SoundPlayerDataSource>(() => TasksSoundPlayer());
+  getIt.registerLazySingleton<SoundPlayerDataSource>(() => AppSoundPlayer());
   // Initialize Sound Datasource
   await getIt<SoundPlayerDataSource>().initialize();
   getIt.registerLazySingleton<BaseSoundRepository>(
