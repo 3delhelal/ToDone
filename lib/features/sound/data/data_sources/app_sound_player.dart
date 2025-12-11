@@ -25,6 +25,8 @@ class AppSoundPlayer implements SoundPlayerDataSource {
       AssetsManager.taskDeleteSound,
       AssetsManager.taskUndoneSound,
       AssetsManager.taskCreatedSound,
+      AssetsManager.sessionFinishedSound,
+      AssetsManager.breakFinishedSound,
     ];
 
     for (final path in soundPaths) {

@@ -11,10 +11,15 @@ class AssetsManager {
   static const String themeIcon = 'assets/svg/theme_icon.svg';
   static const String languageIcon = 'assets/svg/language_icon.svg';
   // Sound Feature
+  // -Tasks Sound
   static const String taskCompleteSound = 'assets/sound/task_complete.mp3';
   static const String taskDeleteSound = 'assets/sound/task_delete.mp3';
   static const String taskUndoneSound = 'assets/sound/task_undone.mp3';
   static const String taskCreatedSound = 'assets/sound/task_created.mp3';
+  // - Pomodoro Sound
+  static const String sessionFinishedSound =
+      'assets/sound/session_finished.mp3';
+  static const String breakFinishedSound = 'assets/sound/break_finished.mp3';
   // Pomodoro
   static const String sessionIcon = 'assets/svg/session_icon.svg';
   static const String breakIcon = 'assets/svg/break_icon.svg';

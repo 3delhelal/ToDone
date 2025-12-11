@@ -5,7 +5,14 @@ enum TaskPriority { low, medium, high }
 enum MangeTaskScreenType { add, edit }
 
 // Sound
-enum SoundType { taskComplete, taskDelete, taskUndone, taskCreated }
+enum SoundType {
+  taskComplete,
+  taskDelete,
+  taskUndone,
+  taskCreated,
+  sessionFinished,
+  breakFinished,
+}
 
 // Pomodoro
 enum PomodoroType { session, breaking }
