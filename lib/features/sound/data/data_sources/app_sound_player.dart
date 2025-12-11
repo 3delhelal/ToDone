@@ -4,12 +4,12 @@ import '/core/helpers/app_enums.dart';
 import '/core/resources/assets_manager.dart';
 import 'sound_player_interface.dart';
 
-class TasksSoundPlayer implements SoundPlayerDataSource {
+class AppSoundPlayer implements SoundPlayerDataSource {
   final AudioPlayer _audioPlayer;
 
   final Map<String, Source> _soundCache = {};
 
-  TasksSoundPlayer({AudioPlayer? audioPlayer})
+  AppSoundPlayer({AudioPlayer? audioPlayer})
     : _audioPlayer = audioPlayer ?? AudioPlayer();
 
   @override
