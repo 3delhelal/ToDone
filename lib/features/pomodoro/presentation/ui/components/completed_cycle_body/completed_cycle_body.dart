@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todone/core/widgets/responsive_builder.dart';
 import '/core/widgets/spacing.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 import '/core/di.dart';
@@ -52,32 +53,75 @@ class _CycleCompletedBodyState extends State<CycleCompletedBody>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: FadeTransition(
-        opacity: _fadeAnimation,
-        child: ScaleTransition(
-          scale: _scaleAnimation,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const VerticalSpace(70),
-                const CompletionAnimatedImage(),
-                const VerticalSpace(16),
-                const CompleteCycleMessages(),
-                const VerticalSpace(30),
-                OutlinedButton(
-                  onPressed: () {
-                    context.read<PomodoroCubit>().cancelPomodoro();
-                  },
-                  child: Text(context.localize.startNewCycle),
-                ),
-              ],
-            ),
+    return ResponsiveBuilder(
+      mobile: _buildMobileLayout(context, _fadeAnimation, _scaleAnimation),
+      tablet: _buildTabletLayout(context, _fadeAnimation, _scaleAnimation),
+    );
+  }
+}
+
+Widget _buildMobileLayout(
+  BuildContext context,
+  Animation<double> fadeAnimation,
+  Animation<double> scaleAnimation,
+) {
+  return Center(
+    child: FadeTransition(
+      opacity: fadeAnimation,
+      child: ScaleTransition(
+        scale: scaleAnimation,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const VerticalSpace(70),
+              const CompletionAnimatedImage(),
+              const VerticalSpace(16),
+              const CompleteCycleMessages(),
+              const VerticalSpace(30),
+              OutlinedButton(
+                onPressed: () {
+                  context.read<PomodoroCubit>().cancelPomodoro();
+                },
+                child: Text(context.localize.startNewCycle),
+              ),
+            ],
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
+Widget _buildTabletLayout(
+  BuildContext context,
+  Animation<double> fadeAnimation,
+  Animation<double> scaleAnimation,
+) {
+  return Center(
+    child: FadeTransition(
+      opacity: fadeAnimation,
+      child: ScaleTransition(
+        scale: scaleAnimation,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const CompletionAnimatedImage(),
+              const CompleteCycleMessages(),
+              const VerticalSpace(15),
+              OutlinedButton(
+                onPressed: () {
+                  context.read<PomodoroCubit>().cancelPomodoro();
+                },
+                child: Text(context.localize.startNewCycle),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }
