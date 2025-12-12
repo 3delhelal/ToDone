@@ -108,9 +108,9 @@ abstract class AppLocalizations {
 
   String get startSession;
 
-  String get pomodoroQuestion;
+  String get pomodoroHint1;
 
-  String get pomodoroAnswer;
+  String get pomodoroHint2;
 
   String get createTaskMsg;
 

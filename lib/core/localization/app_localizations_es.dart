@@ -88,10 +88,9 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get startSession => "Iniciar sesión";
   @override
-  String get pomodoroQuestion => "¿Qué es Pomodoro?";
+  String get pomodoroHint1 => "¡Recordar!";
   @override
-  String get pomodoroAnswer =>
-      "Pomodoro es una técnica de gestión del tiempo que te ayuda a mantenerte enfocado trabajando en intervalos cortos (llamados sesiones) seguidos de pequeños descansos.";
+  String get pomodoroHint2 => "Los pequeños pasos conducen a grandes logros";
 
   @override
   String get createTaskMsg => "Elige una tarea para trabajar";
