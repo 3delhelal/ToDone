@@ -18,20 +18,24 @@ class LanguageSettingsScreen extends StatelessWidget {
         builder: (context, languageState) {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const VerticalSpace(40),
-                ...LanguageConstants.appLanguages.map<Widget>(
-                  (LanguageEntity language) => LanguageOptionCard(
-                    language: language,
-                    selectedLanguageCode: languageState.languageCode,
-                    callBack: () {
-                      context.read<LanguageCubit>().setLanguage(language.code);
-                    },
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const VerticalSpace(40),
+                  ...LanguageConstants.appLanguages.map<Widget>(
+                    (LanguageEntity language) => LanguageOptionCard(
+                      language: language,
+                      selectedLanguageCode: languageState.languageCode,
+                      callBack: () {
+                        context.read<LanguageCubit>().setLanguage(
+                          language.code,
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },
