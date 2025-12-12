@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '/core/constants/app_constants.dart';
+import '/core/widgets/responsive_builder.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 import '/core/widgets/spacing.dart';
 import '/features/pomodoro/presentation/ui/components/common/header_container.dart';
@@ -39,47 +41,160 @@ class ActiveTimerBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    // make ring size responsive but never larger than available width and never zero
-    final ringSize = (size.width * 0.65).clamp(120.0, size.width - 48.0);
-    return Column(
-      children: [
-        HeaderContainer(
-          child: isSession
-              ? TaskNameWidget(taskName: taskName)
-              : Text(
-                  context.localize.enjoyBreak,
-                  style: context.theme.textTheme.titleLarge,
-                ),
-        ),
+    final minSide = size.width < size.height ? size.width : size.height;
+    final ringSize = (minSide * AppConstants.pomodoroRingSizeRatio).clamp(
+      120.0,
+      size.width - 48.0,
+    );
 
-        Center(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              AnimatedTimerFrame(ringSize: ringSize, controller: controller),
-              PomodoroRing(
-                cirleSize: ringSize,
-                progress: _progress,
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const VerticalSpace(25),
-                      TimerCounter(seconds: remainingSeconds),
-                      const VerticalSpace(15),
-                      AnimatedTimerButton(isRunning: isRunning),
-                      const VerticalSpace(10),
-                      SessionTypeWidget(isSession: isSession),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        const VerticalSpace(30),
-        ActiveTimerButtons(isSession: isSession),
-      ],
+    return ResponsiveBuilder(
+      mobile: _buildMobileLayout(
+        context,
+        ringSize,
+        isSession,
+        isRunning,
+        _progress,
+        remainingSeconds,
+        taskName,
+        controller,
+      ),
+      tablet: _buildTabletLayout(
+        context,
+        ringSize,
+        isSession,
+        isRunning,
+        _progress,
+        remainingSeconds,
+        taskName,
+        controller,
+      ),
     );
   }
+}
+
+Widget _buildMobileLayout(
+  BuildContext context,
+  double ringSize,
+  bool isSession,
+  bool isRunning,
+  double progress,
+  int remainingSeconds,
+  String? taskName,
+  AnimationController controller,
+) {
+  return Column(
+    children: [
+      HeaderContainer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            isSession
+                ? TaskNameWidget(taskName: taskName)
+                : Text(
+                    context.localize.enjoyBreak,
+                    style: context.theme.textTheme.titleMedium,
+                  ),
+            const VerticalSpace(10),
+
+            SessionTypeWidget(isSession: isSession),
+          ],
+        ),
+      ),
+      Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            AnimatedTimerFrame(ringSize: ringSize, controller: controller),
+            PomodoroRing(
+              cirleSize: ringSize,
+              progress: progress,
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const VerticalSpace(25),
+                    TimerCounter(seconds: remainingSeconds),
+                    const VerticalSpace(15),
+                    AnimatedTimerButton(isRunning: isRunning),
+                    const VerticalSpace(10),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      const VerticalSpace(30),
+      ActiveTimerButtons(isSession: isSession),
+    ],
+  );
+}
+
+Widget _buildTabletLayout(
+  BuildContext context,
+  double ringSize,
+  bool isSession,
+  bool isRunning,
+  double progress,
+  int remainingSeconds,
+  String? taskName,
+  AnimationController controller,
+) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      HeaderContainer(
+        isTabletLayout: true,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+            isSession
+                ? TaskNameWidget(taskName: taskName)
+                : Text(
+                    context.localize.enjoyBreak,
+                    style: context.theme.textTheme.titleMedium,
+                  ),
+            const VerticalSpace(5),
+
+            SessionTypeWidget(isSession: isSession),
+          ],
+        ),
+      ),
+      Row(
+        children: [
+          Expanded(
+            child: Center(
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  AnimatedTimerFrame(
+                    ringSize: ringSize,
+                    controller: controller,
+                  ),
+                  PomodoroRing(
+                    cirleSize: ringSize,
+                    progress: progress,
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const VerticalSpace(25),
+                          TimerCounter(seconds: remainingSeconds),
+                          const VerticalSpace(15),
+                          AnimatedTimerButton(isRunning: isRunning),
+                          const VerticalSpace(10),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(child: ActiveTimerButtons(isSession: isSession)),
+        ],
+      ),
+    ],
+  );
 }
