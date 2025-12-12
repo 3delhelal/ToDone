@@ -9,7 +9,7 @@ class TaskNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: EdgeInsets.all(1.5),
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(5),
@@ -25,7 +25,7 @@ class TaskNameWidget extends StatelessWidget {
       ),
       child: Text(
         taskName ?? context.localize.withoutTask,
-        style: theme.textTheme.titleLarge!.copyWith(
+        style: theme.textTheme.titleMedium!.copyWith(
           color: theme.colorScheme.primary,
         ),
       ),
