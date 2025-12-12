@@ -9,8 +9,8 @@ class CompletionAnimatedImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Lottie.asset(
       AssetsManager.successLottieAnimation,
-      width: 200,
-      height: 200,
+      width: 150,
+      height: 150,
       repeat: false,
     );
   }

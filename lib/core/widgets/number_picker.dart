@@ -94,7 +94,7 @@ class _NumberPickerState extends State<NumberPicker> {
 
                 return AnimatedDefaultTextStyle(
                   duration: Duration(milliseconds: 200),
-                  style: theme.textTheme.titleLarge!.copyWith(fontSize: 26),
+                  style: theme.textTheme.titleLarge!.copyWith(fontSize: 21),
 
                   child: Center(child: Text(value.toString())),
                 );
@@ -111,10 +111,7 @@ class _NumberPickerState extends State<NumberPicker> {
           const VerticalSpace(20),
 
         const VerticalSpace(10),
-        Text(
-          widget.lable,
-          style: context.theme.textTheme.bodyLarge!.copyWith(fontSize: 20),
-        ),
+        Text(widget.lable, style: context.theme.textTheme.bodyLarge),
       ],
     );
   }

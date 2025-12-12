@@ -16,3 +16,6 @@ enum SoundType {
 
 // Pomodoro
 enum PomodoroType { session, breaking }
+
+// Responsive
+enum DeviceType { mobile, tablet }

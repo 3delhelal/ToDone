@@ -8,20 +8,23 @@ class PomodoroDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
-    return Column(
-      children: [
-        Text(
-          context.localize.pomodoroQuestion,
-          style: theme.textTheme.titleLarge,
-        ),
-        const VerticalSpace(10),
+    return Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Column(
+        children: [
+          Text(
+            context.localize.pomodoroHint1,
+            style: theme.textTheme.titleMedium,
+          ),
+          const VerticalSpace(10),
 
-        Text(
-          context.localize.pomodoroAnswer,
-          style: theme.textTheme.labelMedium,
-          textAlign: TextAlign.center,
-        ),
-      ],
+          Text(
+            context.localize.pomodoroHint2,
+            style: theme.textTheme.labelLarge,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

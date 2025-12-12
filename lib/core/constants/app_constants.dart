@@ -19,4 +19,5 @@ class AppConstants {
   static const int breakMinutePickerMinValue = 5;
   static const int breakMinutePickerMaxValue = 60;
   static const int breakMinutePickerItemCount = 12;
+  static const double pomodoroRingSizeRatio = 0.51;
 }
