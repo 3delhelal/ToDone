@@ -25,7 +25,7 @@ class SessionTypeWidget extends StatelessWidget {
           Text(
             context.localize.focusTime,
 
-            style: theme.textTheme.titleLarge!.copyWith(
+            style: theme.textTheme.titleMedium!.copyWith(
               color: theme.colorScheme.primary,
             ),
           ),
@@ -43,7 +43,7 @@ class SessionTypeWidget extends StatelessWidget {
           const HorizontalSpace(5),
           Text(
             context.localize.breakTime,
-            style: theme.textTheme.titleLarge!.copyWith(
+            style: theme.textTheme.titleMedium!.copyWith(
               color: ColorsManager.freshGreen,
             ),
           ),
