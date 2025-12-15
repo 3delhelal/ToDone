@@ -19,13 +19,11 @@ class StandbyBody extends StatelessWidget {
     final PomodoroCubit pomodoroCubit = context.read<PomodoroCubit>();
     final size = MediaQuery.of(context).size;
     final minSide = size.width < size.height ? size.width : size.height;
-    final ringSize = (minSide * AppConstants.pomodoroRingSizeRatio).clamp(
-      120.0,
-      size.width - 48.0,
-    );
+    final ringSizeMobile = (minSide * AppConstants.pomodoroRingSizeRatioMobile);
+    final ringSizeTablet = (minSide * AppConstants.pomodoroRingSizeRatioTablet);
     return ResponsiveBuilder(
-      mobile: _buildMobileLayout(context, ringSize, pomodoroCubit),
-      tablet: _buildTabletLayout(context, ringSize, pomodoroCubit),
+      mobile: _buildMobileLayout(context, ringSizeMobile, pomodoroCubit),
+      tablet: _buildTabletLayout(context, ringSizeTablet, pomodoroCubit),
     );
   }
 }

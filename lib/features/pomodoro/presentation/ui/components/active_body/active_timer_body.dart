@@ -42,15 +42,12 @@ class ActiveTimerBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final minSide = size.width < size.height ? size.width : size.height;
-    final ringSize = (minSide * AppConstants.pomodoroRingSizeRatio).clamp(
-      120.0,
-      size.width - 48.0,
-    );
-
+    final ringSizeMobile = (minSide * AppConstants.pomodoroRingSizeRatioMobile);
+    final ringSizeTablet = (minSide * AppConstants.pomodoroRingSizeRatioTablet);
     return ResponsiveBuilder(
       mobile: _buildMobileLayout(
         context,
-        ringSize,
+        ringSizeMobile,
         isSession,
         isRunning,
         _progress,
@@ -60,7 +57,7 @@ class ActiveTimerBody extends StatelessWidget {
       ),
       tablet: _buildTabletLayout(
         context,
-        ringSize,
+        ringSizeTablet,
         isSession,
         isRunning,
         _progress,
