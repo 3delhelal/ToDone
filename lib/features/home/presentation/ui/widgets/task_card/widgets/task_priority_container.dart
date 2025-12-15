@@ -17,7 +17,7 @@ class TaskPriorityContainer extends StatelessWidget {
         ),
       ),
       height: 75,
-      width: 15,
+      width: 10,
     );
   }
 }
