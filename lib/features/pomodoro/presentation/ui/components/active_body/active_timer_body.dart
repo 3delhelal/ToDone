@@ -109,9 +109,8 @@ Widget _buildMobileLayout(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const VerticalSpace(25),
                     TimerCounter(seconds: remainingSeconds),
-                    const VerticalSpace(15),
+                    const VerticalSpace(40),
                     AnimatedTimerButton(isRunning: isRunning),
                     const VerticalSpace(10),
                   ],
@@ -121,7 +120,7 @@ Widget _buildMobileLayout(
           ],
         ),
       ),
-      const VerticalSpace(30),
+      const VerticalSpace(40),
       ActiveTimerButtons(isSession: isSession),
     ],
   );
