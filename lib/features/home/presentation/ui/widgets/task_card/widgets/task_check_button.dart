@@ -20,8 +20,8 @@ class TaskCheckButton extends StatelessWidget {
       onTap: callBack,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        width: 30,
-        height: 30,
+        width: 33,
+        height: 33,
         decoration: BoxDecoration(
           color: checked ? ColorsManager.checkBoxColor : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
