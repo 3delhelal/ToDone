@@ -18,7 +18,7 @@ class SessionTypeWidget extends StatelessWidget {
         children: [
           DefaultSvgIcon(
             assetPath: AssetsManager.sessionIcon,
-            color: theme.colorScheme.primary,
+            color: theme.textTheme.titleMedium!.color!,
           ),
 
           const HorizontalSpace(5),
@@ -26,7 +26,7 @@ class SessionTypeWidget extends StatelessWidget {
             context.localize.focusTime,
 
             style: theme.textTheme.titleMedium!.copyWith(
-              color: theme.colorScheme.primary,
+              fontWeight: FontWeight.w800,
             ),
           ),
         ],

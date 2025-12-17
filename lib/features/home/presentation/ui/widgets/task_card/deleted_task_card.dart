@@ -34,8 +34,8 @@ class DeletableTaskCard extends StatelessWidget {
               builder: (context, constraints) {
                 return Container(
                   width: constraints.maxWidth,
-                  height: 75,
-                  padding: const EdgeInsetsDirectional.only(start: 5),
+                  height: 85,
+                  padding: const EdgeInsetsDirectional.only(start: 10),
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   decoration: BoxDecoration(
                     color: backgroundColor,

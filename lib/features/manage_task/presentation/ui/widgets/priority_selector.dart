@@ -16,7 +16,7 @@ class PrioritySelector extends StatelessWidget {
       children: [
         Text(
           context.localize.priority,
-          style: context.theme.textTheme.titleSmall,
+          style: context.theme.textTheme.titleMedium,
         ),
         const VerticalSpace(5),
         Container(

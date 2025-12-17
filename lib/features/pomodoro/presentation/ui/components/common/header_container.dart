@@ -13,7 +13,7 @@ class HeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: isTabletLayout ? 70 : 100,
+      height: isTabletLayout ? 70 : 120,
       child: child,
     );
   }

@@ -28,6 +28,8 @@ class TaskContent extends StatelessWidget {
               decoration: isDone
                   ? TextDecoration.lineThrough
                   : TextDecoration.none,
+              decorationThickness: 2,
+              decorationColor: context.theme.textTheme.titleSmall!.color,
             ),
             overflow: TextOverflow.ellipsis,
           ),
@@ -39,6 +41,8 @@ class TaskContent extends StatelessWidget {
                     ? TextDecoration.lineThrough
                     : TextDecoration.none,
                 overflow: TextOverflow.ellipsis,
+                decorationThickness: 2,
+                decorationColor: context.theme.textTheme.labelMedium!.color,
               ),
             ),
         ],

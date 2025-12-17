@@ -18,7 +18,7 @@ class NoteTextField extends StatelessWidget {
         children: [
           Text(
             context.localize.note,
-            style: context.theme.textTheme.titleSmall,
+            style: context.theme.textTheme.titleMedium,
           ),
           const HorizontalSpace(10),
           Expanded(
@@ -28,10 +28,10 @@ class NoteTextField extends StatelessWidget {
                 isDense: true,
                 hint: Text(
                   context.localize.noteHint,
-                  style: context.theme.textTheme.labelSmall,
+                  style: context.theme.textTheme.labelMedium,
                 ),
               ),
-              style: context.theme.textTheme.bodySmall,
+              style: context.theme.textTheme.bodyMedium,
               initialValue: initalValue,
               maxLines: null,
               onChanged: (text) {

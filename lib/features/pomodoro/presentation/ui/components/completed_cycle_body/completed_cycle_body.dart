@@ -75,11 +75,11 @@ Widget _buildMobileLayout(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const VerticalSpace(70),
+              const VerticalSpace(70), // Instead of header container
               const CompletionAnimatedImage(),
-              const VerticalSpace(16),
+              const VerticalSpace(20),
               const CompleteCycleMessages(),
-              const VerticalSpace(30),
+              const VerticalSpace(70),
               OutlinedButton(
                 onPressed: () {
                   context.read<PomodoroCubit>().cancelPomodoro();
