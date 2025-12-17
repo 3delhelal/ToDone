@@ -13,19 +13,22 @@ class TitleTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(context.localize.title, style: context.theme.textTheme.titleSmall),
+        Text(
+          context.localize.title,
+          style: context.theme.textTheme.titleMedium,
+        ),
         const VerticalSpace(5),
         TextFormField(
           decoration: InputDecoration(
             hint: Text(
               context.localize.titleHint,
-              style: context.theme.textTheme.labelSmall,
+              style: context.theme.textTheme.labelMedium,
             ),
             border: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),
-          style: context.theme.textTheme.bodySmall,
+          style: context.theme.textTheme.bodyMedium,
           initialValue: initalValue,
           maxLines: null,
           onChanged: (value) {
