@@ -1,4 +1,4 @@
-package com.example.todone
+package com.adelhelal.todone.app
 
 import io.flutter.embedding.android.FlutterActivity
 
