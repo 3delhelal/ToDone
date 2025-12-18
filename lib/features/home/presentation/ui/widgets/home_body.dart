@@ -26,7 +26,12 @@ class HomeBody extends StatelessWidget {
         if (state.status == TasksStateStatus.loading) {
           return Center(child: CircularProgressIndicator());
         } else if (state.status == TasksStateStatus.error) {
-          return Center(child: Text(context.localize.somethingWentWrong));
+          return Center(
+            child: Text(
+              context.localize.somethingWentWrong,
+              style: context.theme.textTheme.bodyLarge,
+            ),
+          );
         }
         return TabBarView(
           controller: tabController,
@@ -51,7 +56,7 @@ Widget _buildTaskList(
     return Center(
       child: Text(
         context.localize.noTasksHere,
-        style: context.theme.textTheme.bodyMedium,
+        style: context.theme.textTheme.bodyLarge,
       ),
     );
   }

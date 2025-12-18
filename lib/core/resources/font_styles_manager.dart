@@ -55,7 +55,7 @@ class TextStylesManager {
   );
 
   static TextStyle captionSmallLight = TextStyle(
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.grey,
   );
@@ -110,7 +110,7 @@ class TextStylesManager {
   );
 
   static TextStyle captionSmallDark = TextStyle(
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: FontWeightsManager.regular,
     color: ColorsManager.grey,
   );
