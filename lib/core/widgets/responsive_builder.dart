@@ -11,7 +11,9 @@ class ResponsiveBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     final responsive = ResponsiveHelper(context);
 
-    if (responsive.isTablet && tablet != null) return tablet!;
+    if ((responsive.isTablet || responsive.isLandscape) && tablet != null) {
+      return tablet!;
+    }
     return mobile;
   }
 }

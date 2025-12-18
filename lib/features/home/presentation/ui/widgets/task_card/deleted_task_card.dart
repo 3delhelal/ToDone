@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/core/constants/app_constants.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 import '/core/widgets/svg_icon_button.dart';
 import '/core/resources/assets_manager.dart';
@@ -34,7 +35,7 @@ class DeletableTaskCard extends StatelessWidget {
               builder: (context, constraints) {
                 return Container(
                   width: constraints.maxWidth,
-                  height: 85,
+                  height: AppConstants.taskWidgetHight,
                   padding: const EdgeInsetsDirectional.only(start: 10),
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   decoration: BoxDecoration(
