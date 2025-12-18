@@ -3,6 +3,7 @@ class AppConstants {
   // Home Feature
   static const Duration animationDuration = Duration(milliseconds: 400);
   static const int datePickerEndDate = 2100;
+  static const double taskWidgetHight = 85;
   // Theme Feature
   static const String lightThemeValue = "light_mode";
   static const String darkThemeValue = "dark_mode";

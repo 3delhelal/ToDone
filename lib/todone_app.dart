@@ -31,18 +31,22 @@ class ToDoneApp extends StatelessWidget {
           return BlocSelector<ThemeCubit, ThemeState, ThemeMode>(
             selector: (state) => state.themeMode,
             builder: (context, themeMode) {
-              return MaterialApp(
-                debugShowCheckedModeBanner: false,
-                title: AppConstants.appName,
-                initialRoute: RoutesManager.home,
-                onGenerateRoute: AppRouter.onGenerateRoute,
-                supportedLocales: AppLocalizations.supportedLocales,
-                localizationsDelegates: AppLocalizations.localizationsDelegates,
-                locale: Locale(languageCode),
-                themeMode: themeMode,
-                theme: ThemeManager.lightTheme,
-                darkTheme: ThemeManager.darkTheme,
-                themeAnimationDuration: Duration.zero,
+              return SafeArea(
+                bottom: true,
+                child: MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  title: AppConstants.appName,
+                  initialRoute: RoutesManager.home,
+                  onGenerateRoute: AppRouter.onGenerateRoute,
+                  supportedLocales: AppLocalizations.supportedLocales,
+                  localizationsDelegates:
+                      AppLocalizations.localizationsDelegates,
+                  locale: Locale(languageCode),
+                  themeMode: themeMode,
+                  theme: ThemeManager.lightTheme,
+                  darkTheme: ThemeManager.darkTheme,
+                  themeAnimationDuration: Duration.zero,
+                ),
               );
             },
           );

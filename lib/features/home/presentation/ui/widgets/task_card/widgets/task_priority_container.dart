@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/core/constants/app_constants.dart';
 import '/core/helpers/app_enums.dart';
 import '/core/helpers/converters.dart';
 
@@ -16,7 +17,7 @@ class TaskPriorityContainer extends StatelessWidget {
           bottomEnd: const Radius.circular(15),
         ),
       ),
-      height: 75,
+      height: AppConstants.taskWidgetHight,
       width: 10,
     );
   }

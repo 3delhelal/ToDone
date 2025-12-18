@@ -12,7 +12,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get tasksList => 'Tasks List';
   @override
-  String get unDone => 'To-do';
+  String get unDone => 'To Do';
   @override
   String get done => 'Done';
   @override

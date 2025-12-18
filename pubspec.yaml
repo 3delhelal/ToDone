@@ -5,7 +5,7 @@ description: "  A simple and intuitive To-Do app designed to help you organize y
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ^3.9.2
