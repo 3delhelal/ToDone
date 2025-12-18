@@ -3,7 +3,6 @@ import '/features/sound/domain/repositories/base_sound_repository.dart';
 import '/core/helpers/app_enums.dart';
 import '/core/di.dart';
 import '/core/constants/app_constants.dart';
-import '/features/home/presentation/controller/dummy_data.dart';
 import '/features/home/domain/repo/base_tasks_repo.dart';
 import '/features/home/domain/entities/task.dart';
 part 'tasks_state.dart';
@@ -12,11 +11,7 @@ class TasksCubit extends Cubit<TasksState> {
   BaseTaksRepository homeRepository;
   TasksCubit(this.homeRepository)
     : super(TasksState(status: TasksStateStatus.loading)) {
-    loadDummy();
-    // loadTasks();
-  }
-  void loadDummy() async {
-    emit(TasksState(status: TasksStateStatus.loaded, tasks: enTasks));
+    loadTasks();
   }
 
   void loadTasks() async {
