@@ -33,6 +33,9 @@ class ToDoneApp extends StatelessWidget {
             builder: (context, themeMode) {
               return SafeArea(
                 bottom: true,
+                top: false,
+                right: false,
+                left: false,
                 child: MaterialApp(
                   debugShowCheckedModeBanner: false,
                   title: AppConstants.appName,

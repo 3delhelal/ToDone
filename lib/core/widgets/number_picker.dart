@@ -70,10 +70,21 @@ class _NumberPickerState extends State<NumberPicker> {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (canScrollUp)
-          const Icon(Icons.keyboard_double_arrow_up_rounded, size: 20)
+          GestureDetector(
+            child: const Icon(Icons.keyboard_double_arrow_up_rounded, size: 22),
+            onTap: () {
+              _controller.animateToItem(
+                _controller.selectedItem - 1,
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeInOut,
+              );
+              _updateArrows();
+              widget.onChanged(_values[_controller.selectedItem]);
+            },
+          )
         else
-          const VerticalSpace(20),
-        const VerticalSpace(5),
+          const VerticalSpace(22),
+        const VerticalSpace(12),
         SizedBox(
           height: widget.height,
           width: widget.width,
@@ -103,12 +114,26 @@ class _NumberPickerState extends State<NumberPicker> {
             ),
           ),
         ),
-        const VerticalSpace(5),
+        const VerticalSpace(12),
 
         if (canScrollDown)
-          const Icon(Icons.keyboard_double_arrow_down_rounded, size: 20)
+          GestureDetector(
+            child: const Icon(
+              Icons.keyboard_double_arrow_down_rounded,
+              size: 22,
+            ),
+            onTap: () {
+              _controller.animateToItem(
+                _controller.selectedItem + 1,
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeInOut,
+              );
+              _updateArrows();
+              widget.onChanged(_values[_controller.selectedItem]);
+            },
+          )
         else
-          const VerticalSpace(20),
+          const VerticalSpace(22),
 
         const VerticalSpace(10),
         Text(widget.lable, style: context.theme.textTheme.bodyLarge),
