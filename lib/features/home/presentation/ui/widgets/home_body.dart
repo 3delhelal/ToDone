@@ -21,26 +21,35 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TasksCubit, TasksState>(
-      builder: (context, state) {
-        if (state.status == TasksStateStatus.loading) {
-          return Center(child: CircularProgressIndicator());
-        } else if (state.status == TasksStateStatus.error) {
-          return Center(
-            child: Text(
-              context.localize.somethingWentWrong,
-              style: context.theme.textTheme.bodyLarge,
-            ),
-          );
+    return BlocListener<TasksCubit, TasksState>(
+      listenWhen: (_, current) => current.addingActionEvent,
+      listener: (context, state) {
+        if (state.addingActionEvent) {
+          // To tell the animated list that new task has been added as a first element in the list.
+          _unDoneListKey.currentState?.insertItem(0);
         }
-        return TabBarView(
-          controller: tabController,
-          children: [
-            _buildTaskList(state.unDoneTasks, context, _doneListKey),
-            _buildTaskList(state.doneTasks, context, _unDoneListKey),
-          ],
-        );
       },
+      child: BlocBuilder<TasksCubit, TasksState>(
+        builder: (context, state) {
+          if (state.status == TasksStateStatus.loading) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state.status == TasksStateStatus.error) {
+            return Center(
+              child: Text(
+                context.localize.somethingWentWrong,
+                style: context.theme.textTheme.bodyLarge,
+              ),
+            );
+          }
+          return TabBarView(
+            controller: tabController,
+            children: [
+              _buildTaskList(state.unDoneTasks, context, _unDoneListKey),
+              _buildTaskList(state.doneTasks, context, _doneListKey),
+            ],
+          );
+        },
+      ),
     );
   }
 }
