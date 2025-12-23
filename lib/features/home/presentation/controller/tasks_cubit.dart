@@ -30,10 +30,13 @@ class TasksCubit extends Cubit<TasksState> {
   }
 
   void addTask(Task task) async {
+    final updatedTasks = [task, ...state.tasks];
     emit(
       TasksState(
         status: TasksStateStatus.loaded,
-        tasks: state.tasks..insert(0, task),
+        tasks: updatedTasks,
+        // Update the animated list with the new task.
+        addingActionEvent: true,
       ),
     );
     await homeRepository.addTask(task);
