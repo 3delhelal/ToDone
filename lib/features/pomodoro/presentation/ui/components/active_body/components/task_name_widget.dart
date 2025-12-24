@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/core/utils/text_utils.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 
 class TaskNameWidget extends StatelessWidget {
@@ -25,9 +26,13 @@ class TaskNameWidget extends StatelessWidget {
         ],
       ),
       child: Text(
-        taskName ?? context.localize.withoutTask,
+        taskName != null
+            ? replaceAfterFirstNewLineWithDots(taskName!)
+            : context.localize.withoutTask,
         style: theme.textTheme.titleMedium,
         textAlign: TextAlign.center,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }
