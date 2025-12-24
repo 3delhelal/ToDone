@@ -18,12 +18,14 @@ class ManageTaskCubit extends Cubit<ManageTaskState> {
   String taskId = '';
   String taskTitle = '';
   String? taskNote;
+  bool isDone = false;
 
   void initScreen(Task? task) {
     if (task != null) {
       taskId = task.id;
       taskTitle = task.title;
       taskNote = task.note;
+      isDone = task.done;
       emit(
         state.copyWith(
           newScreenType: MangeTaskScreenType.edit,
@@ -35,10 +37,12 @@ class ManageTaskCubit extends Cubit<ManageTaskState> {
       taskId = '';
       taskTitle = '';
       taskNote = null;
+      isDone = false;
       emit(
         state.copyWith(
           newScreenType: MangeTaskScreenType.add,
           newTaskPriority: TaskPriority.low,
+          newDateTime: DateTime.now(),
         ),
       );
     }
@@ -86,6 +90,7 @@ class ManageTaskCubit extends Cubit<ManageTaskState> {
           time: state.pickedDateTime,
           priority: state.taskPriority,
           note: taskNote,
+          done: isDone,
         ),
       );
     }

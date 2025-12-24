@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '/core/utils/text_utils.dart';
 import '/features/manage_task/presentation/controller/mange_task_cubit.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 import '/core/widgets/spacing.dart';
@@ -35,7 +36,9 @@ class NoteTextField extends StatelessWidget {
               initialValue: initalValue,
               maxLines: null,
               onChanged: (text) {
-                context.read<ManageTaskCubit>().setNote(text);
+                context.read<ManageTaskCubit>().setNote(
+                  removeLeadingEmptyLines(text),
+                );
               },
               onTapOutside: (event) {
                 context.unfocus();
