@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/core/utils/text_utils.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 
 class TaskContent extends StatelessWidget {
@@ -16,14 +17,15 @@ class TaskContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.all(1.5),
       width: width ?? 220,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            title,
+            replaceAfterFirstNewLineWithDots(title),
             style: context.theme.textTheme.titleSmall!.copyWith(
               decoration: isDone
                   ? TextDecoration.lineThrough
@@ -32,10 +34,11 @@ class TaskContent extends StatelessWidget {
               decorationColor: context.theme.textTheme.titleSmall!.color,
             ),
             overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
           if (note != null)
             Text(
-              note!,
+              replaceAfterFirstNewLineWithDots(note!),
               style: context.theme.textTheme.labelMedium!.copyWith(
                 decoration: isDone
                     ? TextDecoration.lineThrough
@@ -44,6 +47,7 @@ class TaskContent extends StatelessWidget {
                 decorationThickness: 2,
                 decorationColor: context.theme.textTheme.labelMedium!.color,
               ),
+              maxLines: 1,
             ),
         ],
       ),
