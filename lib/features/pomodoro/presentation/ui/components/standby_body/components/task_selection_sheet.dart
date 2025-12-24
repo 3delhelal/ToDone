@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/core/utils/text_utils.dart';
 import '/core/helpers/extensions/context_extensions.dart';
 import '/core/resources/colors_manager.dart';
 import '/core/widgets/spacing.dart';
@@ -47,8 +48,10 @@ class TaskSelectionSheet extends StatelessWidget {
               (task) => ListTile(
                 leading: const Icon(Icons.radio_button_unchecked),
                 title: Text(
-                  task.title,
+                  replaceAfterFirstNewLineWithDots(task.title),
                   style: context.theme.textTheme.bodyMedium,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 onTap: () => onTaskSelected(task.title),
               ),
