@@ -66,30 +66,36 @@ Widget _buildMobileLayout(
   Animation<double> scaleAnimation,
 ) {
   return Center(
-    child: FadeTransition(
-      opacity: fadeAnimation,
-      child: ScaleTransition(
-        scale: scaleAnimation,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const VerticalSpace(70), // Instead of header container
-              const CompletionAnimatedImage(),
-              const VerticalSpace(20),
-              const CompleteCycleMessages(),
-              const VerticalSpace(70),
-              OutlinedButton(
-                onPressed: () {
-                  context.read<PomodoroCubit>().cancelPomodoro();
-                },
-                child: Text(context.localize.startNewCycle),
+    child: Column(
+      children: [
+        FadeTransition(
+          opacity: fadeAnimation,
+          child: ScaleTransition(
+            scale: scaleAnimation,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const VerticalSpace(70), // Instead of header container
+                    const CompletionAnimatedImage(),
+                    const VerticalSpace(20),
+                    const CompleteCycleMessages(),
+                    const VerticalSpace(70),
+                    OutlinedButton(
+                      onPressed: () {
+                        context.read<PomodoroCubit>().cancelPomodoro();
+                      },
+                      child: Text(context.localize.startNewCycle),
+                    ),
+                  ],
+                ),
               ),
-            ],
+            ),
           ),
         ),
-      ),
+      ],
     ),
   );
 }
@@ -105,9 +111,9 @@ Widget _buildTabletLayout(
       child: ScaleTransition(
         scale: scaleAnimation,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 5),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CompletionAnimatedImage(),
               const CompleteCycleMessages(),

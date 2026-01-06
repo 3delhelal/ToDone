@@ -15,6 +15,13 @@ class AppSoundPlayer implements SoundPlayerDataSource {
   @override
   Future<void> initialize() async {
     await _audioPlayer.setReleaseMode(ReleaseMode.stop);
+    await _audioPlayer.setAudioContext(
+      AudioContext(
+        android: AudioContextAndroid(
+          audioFocus: AndroidAudioFocus.gainTransient,
+        ),
+      ),
+    );
     await _preloadSounds();
   }
 

@@ -33,7 +33,9 @@ Widget _buildMobileLayout(
   double ringSize,
   PomodoroCubit pomodoroCubit,
 ) {
-  return Center(
+  return SingleChildScrollView(
+    padding: EdgeInsets.all(5),
+    physics: BouncingScrollPhysics(),
     child: Column(
       children: [
         HeaderContainer(
@@ -70,50 +72,53 @@ Widget _buildTabletLayout(
   double ringSize,
   PomodoroCubit pomodoroCubit,
 ) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      HeaderContainer(
-        isTabletLayout: true,
-        child: Text(
-          context.localize.chooseSessionTime,
-          style: context.theme.textTheme.titleMedium,
+  return Padding(
+    padding: const EdgeInsets.all(5.0),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        HeaderContainer(
+          isTabletLayout: true,
+          child: Text(
+            context.localize.chooseSessionTime,
+            style: context.theme.textTheme.titleMedium,
+          ),
         ),
-      ),
-      const VerticalSpace(10),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            child: CircleMinutesPicker(
-              ringSize: ringSize,
-              lable: context.localize.minute,
-              initialIndex: (pomodoroCubit.sessionMinutes - 5) ~/ 5,
-              minValue: AppConstants.sessionMinutePickerMinValue,
-              maxValue: AppConstants.sessionMinutePickerMaxValue,
-              itemCount: AppConstants.sessionMinutePickerItemCount,
-              onChange: (value) => pomodoroCubit.setSessionMinutes(value),
+        const VerticalSpace(10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              child: CircleMinutesPicker(
+                ringSize: ringSize,
+                lable: context.localize.minute,
+                initialIndex: (pomodoroCubit.sessionMinutes - 5) ~/ 5,
+                minValue: AppConstants.sessionMinutePickerMinValue,
+                maxValue: AppConstants.sessionMinutePickerMaxValue,
+                itemCount: AppConstants.sessionMinutePickerItemCount,
+                onChange: (value) => pomodoroCubit.setSessionMinutes(value),
+              ),
             ),
-          ),
-          HorizontalSpace(10),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                FilledButton(
-                  onPressed: () {
-                    _startWorkSession(context);
-                  },
-                  child: Text(context.localize.startSession),
-                ),
-                const VerticalSpace(15),
-                PomodoroDescription(),
-              ],
+            HorizontalSpace(10),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  FilledButton(
+                    onPressed: () {
+                      _startWorkSession(context);
+                    },
+                    child: Text(context.localize.startSession),
+                  ),
+                  const VerticalSpace(15),
+                  PomodoroDescription(),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    ],
+          ],
+        ),
+      ],
+    ),
   );
 }
 
