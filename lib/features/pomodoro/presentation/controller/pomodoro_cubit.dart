@@ -9,7 +9,7 @@ import '/features/pomodoro/domain/repo/base_pomodoro_repo.dart';
 part 'pomodoro_state.dart';
 
 class PomodoroCubit extends Cubit<PomodoroState> {
-  BasePomodoroRepo pomodoroRepo;
+  final BasePomodoroRepo pomodoroRepo;
   PomodoroCubit(this.pomodoroRepo)
     : super(
         StandByPomodoroState(
@@ -19,132 +19,147 @@ class PomodoroCubit extends Cubit<PomodoroState> {
       ) {
     _init();
   }
+  Timer? _uiTimer;
+  DateTime? _startTime;
+  DateTime? _endTime;
+  int _sessionDuration = AppConstants.sessionSecondsDuration;
+  int _breakDuration = AppConstants.breakSecondsDuration;
 
-  Timer? _timer;
-  int _sessionDuration = AppConstants.sessionSecondsDuration; // 20 mins default
-  int _breakDuration = AppConstants.breakSecondsDuration; // 5 mins default
-  int _remainingSeconds = 0;
-  PomodoroType _currentPomodorotype = PomodoroType.session;
+  PomodoroType _currentPomodoroType = PomodoroType.session;
+  String? choosenTask;
+
   void _init() {
     _sessionDuration = pomodoroRepo.getSessionSecondsDuration();
     _breakDuration = pomodoroRepo.getBreakSecondsDuration();
   }
 
-  int get _currentDuration => _currentPomodorotype == PomodoroType.session
+  int get _currentDuration => _currentPomodoroType == PomodoroType.session
       ? _sessionDuration
       : _breakDuration;
-  String? choosenTask;
-
   int get sessionMinutes => _sessionDuration ~/ 60;
   int get breakMinutes => _breakDuration ~/ 60;
-  void setSessionMinutes(int munites) {
-    _sessionDuration = munites * 60;
+
+  void setSessionMinutes(int minutes) {
+    _sessionDuration = minutes * 60;
     pomodoroRepo.setSessionSecondsDuration(_sessionDuration);
   }
 
-  void setBreakkMinutes(int munites) {
-    _breakDuration = munites * 60;
+  void setBreakkMinutes(int minutes) {
+    _breakDuration = minutes * 60;
     pomodoroRepo.setBreakSecondsDuration(_breakDuration);
   }
 
   Future<void> startSession({String? taskName}) async {
-    if (_timer != null && _timer!.isActive) return;
+    if (_uiTimer?.isActive ?? false) return;
     choosenTask = taskName;
-    _currentPomodorotype = PomodoroType.session;
-    _remainingSeconds = _sessionDuration;
+    _currentPomodoroType = PomodoroType.session;
+    _startTime = DateTime.now();
+    _endTime = _startTime!.add(Duration(seconds: _sessionDuration));
+
     emit(
       RunningPomodoroState(
-        type: _currentPomodorotype,
+        type: _currentPomodoroType,
         seconds: _sessionDuration,
-        remainingSeconds: _remainingSeconds,
+        remainingSeconds: _sessionDuration,
         taskName: choosenTask,
       ),
     );
-    await _startTimer();
+    _startUiTimer();
   }
 
   Future<void> startBreak() async {
-    if (_timer != null && _timer!.isActive) {
-      _stopTimer();
-    }
-    _currentPomodorotype = PomodoroType.breaking;
-
-    _remainingSeconds = _breakDuration;
+    _stopUiTimer();
+    _currentPomodoroType = PomodoroType.breaking;
+    _startTime = DateTime.now();
+    _endTime = _startTime!.add(Duration(seconds: _breakDuration));
     emit(
       RunningPomodoroState(
-        type: _currentPomodorotype,
+        type: _currentPomodoroType,
         seconds: _breakDuration,
-        remainingSeconds: _remainingSeconds,
+        remainingSeconds: _breakDuration,
         taskName: choosenTask,
       ),
     );
-    await _startTimer();
+    _startUiTimer();
   }
 
   void pause() {
-    if (!(_timer != null && _timer!.isActive)) return;
-
+    if (_endTime == null) return;
+    final remaining = _endTime!
+        .difference(DateTime.now())
+        .inSeconds
+        .clamp(0, _currentDuration);
+    _stopUiTimer();
     emit(
       PausedPomodoroState(
-        type: _currentPomodorotype,
+        type: _currentPomodoroType,
         seconds: _currentDuration,
-        remainingSeconds: _remainingSeconds,
+        remainingSeconds: remaining,
         taskName: choosenTask,
       ),
     );
-
-    _stopTimer();
   }
 
   Future<void> resume() async {
+    if (state is! PausedPomodoroState) return;
+    final pausedState = state as PausedPomodoroState;
+    _startTime = DateTime.now();
+    _endTime = _startTime!.add(
+      Duration(seconds: pausedState.remainingSeconds + 1),
+    );
     emit(
       RunningPomodoroState(
-        type: _currentPomodorotype,
+        type: _currentPomodoroType,
         seconds: _currentDuration,
-        remainingSeconds: _remainingSeconds,
+        remainingSeconds: pausedState.remainingSeconds,
         taskName: choosenTask,
       ),
     );
 
-    await _startTimer();
-  }
-
-  Future<void> endCurrentSession() async {
-    _onTimerComplete();
+    _startUiTimer();
   }
 
   Future<void> cancelPomodoro() async {
-    _stopTimer();
+    _stopUiTimer();
+    _startTime = null;
+    _endTime = null;
+
     emit(StandByPomodoroState());
   }
 
-  // Private Methods
+  Future<void> endCurrentSession() async {
+    await _onTimerComplete();
+  }
 
-  Future<void> _startTimer() async {
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) async {
-      if (_remainingSeconds > 0) {
-        _remainingSeconds = _remainingSeconds - 1;
+  // ===== Private Logic =====
+  void _startUiTimer() {
+    _uiTimer?.cancel();
+    _uiTimer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (_endTime == null) return;
+      final remaining = _endTime!.difference(DateTime.now()).inSeconds;
+      if (remaining > 0) {
         emit(
           RunningPomodoroState(
-            type: _currentPomodorotype,
+            type: _currentPomodoroType,
             seconds: _currentDuration,
-            remainingSeconds: _remainingSeconds,
+            remainingSeconds: remaining,
             taskName: choosenTask,
           ),
         );
       } else {
-        await _onTimerComplete();
+        _onTimerComplete();
       }
     });
   }
 
-  void _stopTimer() {
-    _timer?.cancel();
-    _timer = null;
+  void _stopUiTimer() {
+    _uiTimer?.cancel();
+    _uiTimer = null;
   }
 
   Future<void> _onTimerComplete() async {
-    if (_currentPomodorotype == PomodoroType.session) {
+    _stopUiTimer();
+    if (_currentPomodoroType == PomodoroType.session) {
       getIt<BaseSoundRepository>().playTaskSound(
         soundType: SoundType.sessionFinished,
       );
@@ -153,8 +168,6 @@ class PomodoroCubit extends Cubit<PomodoroState> {
         soundType: SoundType.breakFinished,
       );
     }
-    _stopTimer();
-
-    emit(FinishedPomodoroState(type: _currentPomodorotype));
+    emit(FinishedPomodoroState(type: _currentPomodoroType));
   }
 }
