@@ -29,6 +29,13 @@ class SettingsScreen extends StatelessWidget {
                 context.pushNamed(RoutesManager.languageSettings);
               },
             ),
+            SettingsMenuButton(
+              lable: context.localize.privacyPolicy,
+              svg: AssetsManager.privacyIcon,
+              press: () {
+                context.pushNamed(RoutesManager.privacyPolicy);
+              },
+            ),
           ],
         ),
       ),
