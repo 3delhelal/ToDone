@@ -5,4 +5,5 @@ class RoutesManager {
   static const String themeSettings = 'theme-settings';
   static const String pomodoro = 'pomodoro';
   static const String languageSettings = 'language';
+  static const String privacyPolicy = 'privacy-policy';
 }

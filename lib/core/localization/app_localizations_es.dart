@@ -143,4 +143,92 @@ class AppLocalizationsEs extends AppLocalizations {
   String get de => 'Alemán';
   @override
   String get fr => 'Francés';
+
+  // Privacy Policy
+  @override
+  String get privacyPolicy => 'Política de Privacidad';
+  @override
+  String get lastUpdatedMessage =>
+      'Última actualización: 19 de febrero de 2026';
+  @override
+  String get introductionLabel => 'Introducción';
+  @override
+  String get introductionMessage =>
+      "ToDone es una aplicación de productividad simple y enfocada (Tareas y Pomodoro) diseñada para ayudar a los usuarios a administrar sus tareas y concentrarse mejor, sin recopilar ni rastrear ningún dato personal.\n\nSu privacidad es extremadamente importante para nosotros. Esta Política de Privacidad explica de manera clara y transparente cómo ToDone maneja los datos de los usuarios.";
+  @override
+  String get informationCollectionAndUseLabel =>
+      'Recopilación y Uso de la Información';
+  @override
+  String get informationCollectionAndUseParagraph =>
+      'ToDone NO recopila ninguna información personal.\n\nEspecíficamente:';
+  @override
+  String get informationCollectionAndUseBullet1 =>
+      'No recopilamos nombres, correos electrónicos, números de teléfono ni ningún identificador.';
+  @override
+  String get informationCollectionAndUseBullet2 =>
+      'No recopilamos análisis de uso ni datos de comportamiento.';
+  @override
+  String get informationCollectionAndUseBullet3 =>
+      'No rastreamos a los usuarios de ninguna manera.';
+  @override
+  String get informationCollectionAndUseBullet4 =>
+      'No requerimos la creación de una cuenta ni el inicio de sesión.';
+  @override
+  String get everyThingIsLocallyMessage =>
+      'Todas las tareas, configuraciones y datos de la aplicación permanecen localmente solo en el dispositivo del usuario.';
+  @override
+  String get permissionsLable => 'Permisos';
+  @override
+  String get permissionsAppNameMessage => 'ToDone:';
+  @override
+  String get permissionsAppMessage1 =>
+      'No solicita ningún permiso del dispositivo.';
+  @override
+  String get permissionsAppMessage2 =>
+      'No accede a la cámara, micrófono, almacenamiento, contactos, ubicación ni a ningún recurso del sistema.';
+  @override
+  String get permissionsAppMessage3 =>
+      'Si se usan sonidos o temporizadores dentro de la aplicación, funcionan completamente dentro de la aplicación sin acceder ni compartir ningún dato externo.';
+  @override
+  String get dataStorageLable => 'Almacenamiento de Datos';
+  @override
+  String get dataStorageMessage1 =>
+      'Todos los datos (tareas, temporizadores, preferencias) se almacenan localmente en el dispositivo.';
+  @override
+  String get dataStorageMessage2 => 'Ningún dato se sube a ningún servidor.';
+  @override
+  String get dataStorageMessage3 =>
+      'No se utiliza almacenamiento en la nube ni bases de datos externas.';
+  @override
+  String get dataStorageMessage4 =>
+      'Si el usuario elimina la aplicación, todos los datos almacenados se eliminan de forma permanente.';
+  @override
+  String get thirdPartyServicesLabel => 'Servicios de Terceros';
+  @override
+  String get thirdPartyServicesMessage => 'ToDone no utiliza:';
+  @override
+  String get thirdPartyServicesBullet1 => 'Servicios de análisis de terceros';
+  @override
+  String get thirdPartyServicesBullet2 => 'Redes publicitarias';
+  @override
+  String get thirdPartyServicesBullet3 => 'SDK de seguimiento';
+  @override
+  String get thirdPartyServicesBullet4 =>
+      'API externas que recopilan datos del usuario';
+  @override
+  String get childrensPrivacy => "Privacidad de los Niños";
+  @override
+  String get childrensPrivacyMessage =>
+      "ToDone no recopila a sabiendas ningún dato de nadie, incluidos niños menores de 13 años. Dado que no se recopila ningún dato en absoluto, la aplicación es segura para todos los grupos de edad.";
+  @override
+  String get changesToThisPrivacyPolicyLabel =>
+      "Cambios en esta Política de Privacidad";
+  @override
+  String get changesToThisPrivacyPolicyMessage =>
+      "Si esta Política de Privacidad se actualiza en el futuro, los cambios se reflejarán en esta página con una fecha de revisión actualizada.\n\nCualquier cambio respetará siempre el principio fundamental de ToDone: ninguna recopilación de datos, nunca.";
+  @override
+  String get contactUs => "Contáctenos";
+  @override
+  String get contactUsMessage =>
+      "Si tiene alguna pregunta, inquietud o solicitud con respecto a esta Política de Privacidad o sus datos, comuníquese con nosotros directamente a:\n\nCorreo electrónico: 3delhelal@gmail.com\n\nToDone fue creado con principios que priorizan la privacidad. Sus datos siguen siendo suyos. Siempre.";
 }

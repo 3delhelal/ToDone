@@ -142,4 +142,91 @@ class AppLocalizationsEn extends AppLocalizations {
   String get de => 'German';
   @override
   String get fr => 'French';
+
+  // Privacy Policy
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+  @override
+  String get lastUpdatedMessage => 'Last updated: February 19, 2026';
+  @override
+  String get introductionLabel => 'Introduction';
+  @override
+  String get introductionMessage =>
+      "ToDone is a simple and focused productivity application (Todo & Pomodoro) designed to help users manage their tasks and focus better, without collecting or tracking any personal data.\n\nYour privacy is extremely important to us. This Privacy Policy explains clearly and transparently how ToDone handles user data.";
+  @override
+  String get informationCollectionAndUseLabel =>
+      'Information Collection and Use';
+  @override
+  String get informationCollectionAndUseParagraph =>
+      'ToDone does NOT collect any personal information.\n\nSpecifically:';
+  @override
+  String get informationCollectionAndUseBullet1 =>
+      'We do not collect names, emails, phone numbers, or any identifiers.';
+  @override
+  String get informationCollectionAndUseBullet2 =>
+      'We do not collect usage analytics or behavioral data.';
+  @override
+  String get informationCollectionAndUseBullet3 =>
+      'We do not track users in any way.';
+  @override
+  String get informationCollectionAndUseBullet4 =>
+      'We do not require account creation or login.';
+  @override
+  String get everyThingIsLocallyMessage =>
+      'All tasks, settings, and app data remain locally on the user’s device only.';
+  @override
+  String get permissionsLable => 'Permissions';
+  @override
+  String get permissionsAppNameMessage => 'ToDone:';
+  @override
+  String get permissionsAppMessage1 =>
+      'Does not request any device permissions.';
+  @override
+  String get permissionsAppMessage2 =>
+      'Does not access camera, microphone, storage, contacts, location, or any system resources.';
+  @override
+  String get permissionsAppMessage3 =>
+      'If sounds or timers are used inside the app, they operate entirely within the app without accessing or sharing any external data.';
+  @override
+  String get dataStorageLable => 'Data Storage';
+  @override
+  String get dataStorageMessage1 =>
+      'All data (tasks, timers, preferences) are stored locally on the device.';
+  @override
+  String get dataStorageMessage2 => 'No data is uploaded to any server.';
+  @override
+  String get dataStorageMessage3 =>
+      'No cloud storage or external databases are used.';
+  @override
+  String get dataStorageMessage4 =>
+      'If the user deletes the app, all stored data is permanently removed.';
+  @override
+  String get thirdPartyServicesLabel => 'Third-Party Services';
+  @override
+  String get thirdPartyServicesMessage => 'ToDone does not use:';
+  @override
+  String get thirdPartyServicesBullet1 => 'Third-party analytics services';
+  @override
+  String get thirdPartyServicesBullet2 => 'Advertising networks';
+  @override
+  String get thirdPartyServicesBullet3 => 'Tracking SDKs';
+  @override
+  String get thirdPartyServicesBullet4 =>
+      'External APIs that collect user data';
+  @override
+  String get childrensPrivacy => "Children’s Privacy";
+  @override
+  String get childrensPrivacyMessage =>
+      "ToDone does not knowingly collect any data from anyone, including children under the age of 13. Since no data is collected at all, the app is safe for all age groups.";
+  @override
+  String get changesToThisPrivacyPolicyLabel =>
+      "Changes to This Privacy Policy";
+  @override
+  String get changesToThisPrivacyPolicyMessage =>
+      "If this Privacy Policy is updated in the future, changes will be reflected on this page with an updated revision date.\n\nAny changes will always respect the core principle of ToDone: no data collection, ever.";
+  @override
+  String get contactUs => "Contact Us";
+  @override
+  String get contactUsMessage =>
+      "If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us directly at:\n\nEmail: 3delhelal@gmail.com\n\nToDone was built with privacy-first principles. Your data stays yours. Always.";
 }

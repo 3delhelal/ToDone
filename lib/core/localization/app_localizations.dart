@@ -152,6 +152,73 @@ abstract class AppLocalizations {
   String get es;
   String get de;
   String get fr;
+
+  // Privacy Policy
+  String get privacyPolicy;
+
+  String get lastUpdatedMessage;
+
+  String get introductionLabel;
+
+  String get introductionMessage;
+
+  String get informationCollectionAndUseLabel;
+
+  String get informationCollectionAndUseParagraph;
+
+  String get informationCollectionAndUseBullet1;
+
+  String get informationCollectionAndUseBullet2;
+
+  String get informationCollectionAndUseBullet3;
+
+  String get informationCollectionAndUseBullet4;
+
+  String get everyThingIsLocallyMessage;
+
+  String get permissionsLable;
+
+  String get permissionsAppNameMessage;
+
+  String get permissionsAppMessage1;
+
+  String get permissionsAppMessage2;
+
+  String get permissionsAppMessage3;
+
+  String get dataStorageLable;
+
+  String get dataStorageMessage1;
+
+  String get dataStorageMessage2;
+
+  String get dataStorageMessage3;
+
+  String get dataStorageMessage4;
+
+  String get thirdPartyServicesLabel;
+
+  String get thirdPartyServicesMessage;
+
+  String get thirdPartyServicesBullet1;
+
+  String get thirdPartyServicesBullet2;
+
+  String get thirdPartyServicesBullet3;
+
+  String get thirdPartyServicesBullet4;
+
+  String get childrensPrivacy;
+
+  String get childrensPrivacyMessage;
+
+  String get changesToThisPrivacyPolicyLabel;
+
+  String get changesToThisPrivacyPolicyMessage;
+
+  String get contactUs;
+
+  String get contactUsMessage;
 }
 
 class _AppLocalizationsDelegate
