@@ -10,6 +10,7 @@ class AssetsManager {
   // Settings Screen
   static const String themeIcon = 'assets/svg/theme_icon.svg';
   static const String languageIcon = 'assets/svg/language_icon.svg';
+  static const String privacyIcon = 'assets/svg/privacy_icon.svg';
   // Sound Feature
   // -Tasks Sound
   static const String taskCompleteSound = 'assets/sound/task_complete.mp3';

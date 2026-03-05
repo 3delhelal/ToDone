@@ -6,6 +6,7 @@ import '/features/settings/ui/settings_screen.dart';
 import '/features/theme/presentation/ui/theme_settings_screen.dart';
 import '/features/pomodoro/presentation/ui/pomodoro_screen.dart';
 import '/features/language/presentation/ui/change_language_screen.dart';
+import '/features/settings/ui/privacy_policy_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -41,6 +42,11 @@ class AppRouter {
       case RoutesManager.languageSettings:
         return MaterialPageRoute(
           builder: (_) => LanguageSettingsScreen(),
+          settings: settings,
+        );
+      case RoutesManager.privacyPolicy:
+        return MaterialPageRoute(
+          builder: (_) => PrivacyPolicyScreen(),
           settings: settings,
         );
       default:
